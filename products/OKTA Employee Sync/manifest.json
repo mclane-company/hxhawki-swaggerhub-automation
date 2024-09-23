@@ -2,7 +2,7 @@
     "productMetadata": {
         "description": "Allows users to get, search, add and delete users using OKTA APIs",
         "slug": "okta-employee-sync",
-        "public": true,
+        "public": false,
         "hidden": false,
         "logo": "images/okta.png",
         "logoDark": "images/okta.png",

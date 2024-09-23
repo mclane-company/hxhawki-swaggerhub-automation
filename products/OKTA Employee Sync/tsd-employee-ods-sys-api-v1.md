@@ -1,100 +1,19 @@
 # History Of Changes
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 22%" />
-<col style="width: 49%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Version</strong></th>
-<th><strong>Author</strong></th>
-<th><strong>Reason for change</strong></th>
-<th><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.0</td>
-<td>J Sack</td>
-<td>Initial</td>
-<td>05/16/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add Put endpoint</td>
-<td>05/29/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add Patch endpoint</td>
-<td>06/05/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add Post endpoint</td>
-<td>06/05/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Update Patch and Put endpoint to use Stored procedure</td>
-<td>06/27/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Update Get by user id to endpoint to use Stored procedure</td>
-<td>07/03/2204</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Update Get (Search) by user id to endpoint to use Stored
-procedure</td>
-<td>07/16/2204</td>
-</tr>
-<tr>
-<td>1.1</td>
-<td></td>
-<td>Update the Get by user id to use the search employees stored
-procedure</td>
-<td>07/17/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><p>Changed flsaRegionalCode to flsaCode</p>
-<p>Changed status to employmentStatusCode</p></td>
-<td>07/23/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><p>Change to handle different date formats</p>
-<p>DD-MON-YYYY and YYYY-MM-DD</p></td>
-<td>07/31/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>URL decode of the filter parameter value</td>
-<td>08/06/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><p>Add last modified date to the get response</p>
-<p>Add userId to Get/Put/Post</p></td>
-<td>08/19/2024</td>
-</tr>
-</tbody>
-</table>
+| **Version** | **Author** | **Reason for change**                                                       | **Date**   |
+| ----------- | ---------- | --------------------------------------------------------------------------- | ---------- |
+| 1.0         | J Sack     | Initial                                                                     | 05/16/2024 |
+|             |            | Add Put endpoint                                                            | 05/29/2024 |
+|             |            | Add Patch endpoint                                                          | 06/05/2024 |
+|             |            | Add Post endpoint                                                           | 06/05/2024 |
+|             |            | Update Patch and Put endpoint to use Stored procedure                       | 06/27/2024 |
+|             |            | Update Get by user id to endpoint to use Stored procedure                   | 07/03/2204 |
+|             |            | Update Get (Search) by user id to endpoint to use Stored procedure          | 07/16/2204 |
+| 1.1         |            | Update the Get by user id to use the search employees stored procedure      | 07/17/2024 |
+|             |            | Changed flsaRegionalCode to flsaCode Changed status to employmentStatusCode | 07/23/2024 |
+|             |            | Change to handle different date formats DD-MON-YYYY and YYYY-MM-DD          | 07/31/2024 |
+|             |            | URL decode of the filter parameter value                                    | 08/06/2024 |
+|             |            | Add last modified date to the get response Add userId to Get/Put/Post       | 08/19/2024 |
 
 # Purpose 
 
@@ -186,26 +105,26 @@ application/json
 ###### Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| :--------- | :------------------------- | :-------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
 | X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| :----------- | :------: | :---- |
 |              |          |       |
 
 Example:
@@ -242,12 +161,12 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 
 **CALL** INTERIM_CODE.GETUSERS_SP(resultsSet,:OFFSET,:LIMIT,:EMPLID);
 
-| Stored Procedure Parameter | Parameter | Assignment/Description | Example |
-|----|----|----|----|
-| resultsSet |  | Cursor containing the rows returned |  |
-| OFFSET |  | offset query parameter, default to zero | 5 |
-| LIMIT |  | limit query parameter, default to 20 | 20 |
-| EMPLID |  | employeeId query parameter | 000014527 |
+| Stored Procedure Parameter | Parameter | Assignment/Description                  | Example   |
+| -------------------------- | --------- | --------------------------------------- | --------- |
+| resultsSet                 |           | Cursor containing the rows returned     |           |
+| OFFSET                     |           | offset query parameter, default to zero | 5         |
+| LIMIT                      |           | limit query parameter, default to 20    | 20        |
+| EMPLID                     |           | employeeId query parameter              | 000014527 |
 
 Example:
 
@@ -373,25 +292,26 @@ context.type = “Error”
 
 Example:
 
+```json
 {  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "tracingId": "abc55247",  
+  "title": "Resource Not Found",  
+  "status": 404,  
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "422",  
+      "component": "employees-ods-sys-api",  
+      "timeStamp": "2023-04-20T14:46:59.131Z",  
+      "message": "Employee not found for employee Id = 000136222"  
+    }  
+  ]  
 }
+```
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via our common error structure
@@ -400,25 +320,26 @@ Structure](#_Error_Structure)
 
 Example:
 
+```json
 {  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "tracingId": "abc55247",  
+  "title": "Resource Not Found",  
+  "status": 404,  
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "422",  
+      "component": "employees-ods-sys-api",  
+      "timeStamp": "2023-04-20T14:46:59.131Z",  
+      "message": "Employee not found for employee Id = 000136222"  
+    }  
+  ]  
 }
+```
 
 ###### HTTP Status Codes
 
@@ -506,257 +427,63 @@ application/json
 ###### Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| :--------- | :------------------------- | :-------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
 | X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 23%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">employee</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. psmith</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">isActive</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">employmentStatusCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">birthDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2000-09-08</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">ssnLastFour</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1124</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">distributionCenterDivisionId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">division</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">costCenter</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 20020</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">department</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">managerId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 000028632</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">locationId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 999</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyName</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 001</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">businessUnit</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR360</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">terminationDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2024-01-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2024-01-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">payGrade</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">flsaCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. V</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">compensationTypeCode</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. S</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">extendedTimeOff</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>EX. 2024-03-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">first</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">middle</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">last</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">job</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">code</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">title</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Stocker</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">familyCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. D</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">family</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. IT Platform</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">positionId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">workAddress</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">address1</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">city</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">postalCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name                 | Required | Notes   | Example                       |
+| ---------------------------- | -------- | ------- | ----------------------------- |
+| employee                     | Y        |         |                               |
+| userId                       | N        | string  | psmith                        |
+| isActive                     | N        | boolean | true                          |
+| employmentStatusCode         | N        | string  | A                             |
+| birthDate                    | N        | date    | 2000-09-08                    |
+| ssnLastFour                  | N        | string  | 1124                          |
+| distributionCenterDivisionId | N        | string  | GR260                         |
+| division                     | N        | string  | McLane Business Info Services |
+| costCenter                   | N        | string  | 20020                         |
+| department                   | N        | string  | Platform Administration       |
+| managerId                    | N        | string  | 000028632                     |
+| locationId                   | N        | string  | 999                           |
+| companyName                  | N        | string  | McLane Company, Inc.          |
+| companyCode                  | N        | string  | 001                           |
+| businessUnit                 | N        | string  | GR360                         |
+| terminationDate              | N        | date    | 2024-01-31                    |
+| startDate                    | N        | date    | 2024-01-31                    |
+| payGrade                     | N        | string  | L                             |
+| flsaCode                     | N        | string  | V                             |
+| compensationTypeCode         | Y        | string  | S                             |
+| extendedTimeOff              | N        |         |                               |
+| startDate                    | N        | date    | 2024-03-31                    |
+| name                         |          |         |                               |
+| first                        | Y        | string  | Mary                          |
+| middle                       | N        | string  | Sue                           |
+| last                         | Y        | string  | Eliassen                      |
+| job                          | N        |         |                               |
+| code                         | N        | string  | 1067                          |
+| title                        | N        | string  | Stocker                       |
+| familyCode                   | N        | string  | D                             |
+| family                       | N        | string  | IT Platform                   |
+| positionId                   | N        | string  | P001537                       |
+| workAddress                  | N        |         |                               |
+| address1                     | N        | string  | 4747 McLane Parkway           |
+| city                         | N        | string  | Temple                        |
+| state                        | N        | string  | TX                            |
+| postalCode                   | N        | string  | 76504                         |
 
 Example:
 
@@ -835,301 +562,112 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 **CALL**
 INTERIM_CODE.UPDATEUSERBYID_SP(:EMPLID,:FIRST_NM,:MIDDLE_NM,:LAST_NM,:BIRTHDATE,:SSN,:DEPT_ID,:DEPT_NM,:JOB_CD,:JOB_NM,:JOB_FAM_CD,:JOB_FAM_NM,:POSITION_CD,:DIV_CD,:DIV_NM,:COMPANY_CD,:COMPANY_NM,:GRADE,:SUPERVISOR_ID,:EMPL_STATUS,:EMPL_TYPE,:BUSINESS_UNIT,:TERM_DT,:LOCATION,:ADDRESS,:CITY,:STATE,:ZIP,:LEAVE_EFF_DT,:FLSA_STATUS,:START_DT,:ACTIVE,:USER_ID);
 
-<table style="width:100%;">
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 8%" />
-<col style="width: 36%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Parameter Name</th>
-<th style="text-align: left;">Parameter Type</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>EMPLID</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.employeeId</td>
-<td style="text-align: left;">000132731</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>FIRST_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.name.first</td>
-<td style="text-align: left;">Pete</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>MIDDLE_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.name.middle</td>
-<td style="text-align: left;">James</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>LAST_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.name.last</td>
-<td style="text-align: left;">Lawler</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>BIRTHDATE</strong></td>
-<td style="text-align: center;">IN</td>
-<td><p>employee.birthDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the update</p></td>
-<td style="text-align: left;">30-Jul-1980</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>SSN</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.ssnLastFour</td>
-<td style="text-align: left;">3321</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>DEPT_ID</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.costCenter</td>
-<td style="text-align: left;">20014</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>DEPT_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.department</td>
-<td style="text-align: left;">Perishable/Refrigeration</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>JOB_CD</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.job.code</td>
-<td style="text-align: left;">1002</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>JOB_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.job.title</td>
-<td style="text-align: left;">Checker/Loader IV</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>JOB_FAM_CD</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.job.familyCode</td>
-<td style="text-align: left;">Loaders</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>JOB_FAM_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.job.family</td>
-<td style="text-align: left;">Loaders</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>POSITION_CD</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.job.positionId</td>
-<td style="text-align: left;">P016064</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>DIV_CD</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.distributionCenterDivisionId</td>
-<td style="text-align: left;">GR250</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>DIV_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.division</td>
-<td style="text-align: left;">GR Suneast</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>COMPANY_CD</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.companyCode</td>
-<td style="text-align: left;">007</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>COMPANY_NM</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.companyName</td>
-<td style="text-align: left;">McLane Suneast, Inc.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>GRADE</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.payGrade</td>
-<td style="text-align: left;">4</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>SUPERVISOR_ID</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.managerId</td>
-<td style="text-align: left;">000030137</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>EMPL_STATUS</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.employmentStatusCode</td>
-<td style="text-align: left;">A</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>EMPL_TYPE</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.compensationTypeCode</td>
-<td style="text-align: left;">H</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>BUSINESS_UNIT</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.businessUnit</td>
-<td style="text-align: left;">GR250</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>TERM_DT</strong></td>
-<td style="text-align: center;">IN</td>
-<td><p>employee.terminationDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the update</p></td>
-<td style="text-align: left;">30-Jul-2003</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>LOCATION</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.locationId</td>
-<td style="text-align: left;">250</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>ADDRESS</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.workAddress.address1</td>
-<td style="text-align: left;">1818 Poinciana Blvd</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>CITY</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.workAddress.city</td>
-<td style="text-align: left;">Kissimmee</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>STATE</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.workAddress.state</td>
-<td style="text-align: left;">FL</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>ZIP</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.workAddress.postalCode</td>
-<td style="text-align: left;">34758</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>LEAVE_EFF_DT</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.extendedTimeOff.startDate</td>
-<td style="text-align: left;">30-Jul-2024</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>FLSA_STATUS</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.flsaCode</td>
-<td style="text-align: left;">N</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>START_DT</strong></td>
-<td style="text-align: center;">IN</td>
-<td><p>employee.startDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the update</p></td>
-<td style="text-align: left;">30-Jan-2000</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>ACTIVE</strong></td>
-<td style="text-align: center;">IN</td>
-<td>If employee.isActive = true then 1 else 0</td>
-<td style="text-align: left;">true</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>USER_ID</strong></td>
-<td style="text-align: center;">IN</td>
-<td>employee.userId</td>
-<td style="text-align: left;">psmith</td>
-</tr>
-</tbody>
-</table>
+| Parameter Name | Parameter Type | Assignment/Description                                                                                                                                                                                 | Example                  |
+| -------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------ |
+| EMPLID         | IN             | employee.employeeId                                                                                                                                                                                    | 000132731                |
+| FIRST_NM       | IN             | employee.name.first                                                                                                                                                                                    | Pete                     |
+| MIDDLE_NM      | IN             | employee.name.middle                                                                                                                                                                                   | James                    |
+| LAST_NM        | IN             | employee.name.last                                                                                                                                                                                     | Lawler                   |
+| BIRTHDATE      | IN             | employee.birthDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the update       | 30-Jul-1980              |
+| SSN            | IN             | employee.ssnLastFour                                                                                                                                                                                   | 3321                     |
+| DEPT_ID        | IN             | employee.costCenter                                                                                                                                                                                    | 20014                    |
+| DEPT_NM        | IN             | employee.department                                                                                                                                                                                    | Perishable/Refrigeration |
+| JOB_CD         | IN             | employee.job.code                                                                                                                                                                                      | 1002                     |
+| JOB_NM         | IN             | employee.job.title                                                                                                                                                                                     | Checker/Loader IV        |
+| JOB_FAM_CD     | IN             | employee.job.familyCode                                                                                                                                                                                | Loaders                  |
+| JOB_FAM_NM     | IN             | employee.job.family                                                                                                                                                                                    | Loaders                  |
+| POSITION_CD    | IN             | employee.job.positionId                                                                                                                                                                                | P016064                  |
+| DIV_CD         | IN             | employee.distributionCenterDivisionId                                                                                                                                                                  | GR250                    |
+| DIV_NM         | IN             | employee.division                                                                                                                                                                                      | GR Suneast               |
+| COMPANY_CD     | IN             | employee.companyCode                                                                                                                                                                                   | 007                      |
+| COMPANY_NM     | IN             | employee.companyName                                                                                                                                                                                   | McLane Suneast, Inc.     |
+| GRADE          | IN             | employee.payGrade                                                                                                                                                                                      | 4                        |
+| SUPERVISOR_ID  | IN             | employee.managerId                                                                                                                                                                                     | 000030137                |
+| EMPL_STATUS    | IN             | employee.employmentStatusCode                                                                                                                                                                          | A                        |
+| EMPL_TYPE      | IN             | employee.compensationTypeCode                                                                                                                                                                          | H                        |
+| BUSINESS_UNIT  | IN             | employee.businessUnit                                                                                                                                                                                  | GR250                    |
+| TERM_DT        | IN             | employee.terminationDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the update | 30-Jul-2003              |
+| LOCATION       | IN             | employee.locationId                                                                                                                                                                                    | 250                      |
+| ADDRESS        | IN             | employee.workAddress.address1                                                                                                                                                                          | 1818 Poinciana Blvd      |
+| CITY           | IN             | employee.workAddress.city                                                                                                                                                                              | Kissimmee                |
+| STATE          | IN             | employee.workAddress.state                                                                                                                                                                             | FL                       |
+| ZIP            | IN             | employee.workAddress.postalCode                                                                                                                                                                        | 34758                    |
+| LEAVE_EFF_DT   | IN             | employee.extendedTimeOff.startDate                                                                                                                                                                     | 30-Jul-2024              |
+| FLSA_STATUS    | IN             | employee.flsaCode                                                                                                                                                                                      | N                        |
+| START_DT       | IN             | employee.startDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the update       | 30-Jan-2000              |
+| ACTIVE         | IN             | If employee.isActive = true then 1 else 0                                                                                                                                                              | true                     |
+| USER_ID        | IN             | employee.userId                                                                                                                                                                                        | psmith                   |
+
 
 Example:
 
-CALL INTERIM_CODE.UPDATEUSERBYID_SP(
+  CALL INTERIM_CODE.UPDATEUSERBYID_SP(
 
-employee.employeeId,
+  employee.employeeId,
 
-employee.name.first,
+  employee.name.first,
 
-employee.name.middle,
+  employee.name.middle,
 
-employee.name.last,
+  employee.name.last,
 
-employee.birthDate, --in format DD-MON-YYYY
+  employee.birthDate, --in format DD-MON-YYYY
 
-employee.ssnLastFour,
+  employee.ssnLastFour,
 
-employee.costCenter,
+  employee.costCenter,
 
-employee.department,
+  employee.department,
 
-employee.job.code,
+  employee.job.code,
 
-employee.job.title,
+  employee.job.title,
 
-employee.job.familyCode,
+  employee.job.familyCode,
 
-employee.job.family,
+  employee.job.family,
 
-employee.job.positionId,
+  employee.job.positionId,
 
-employee.distributionCenterDivisionId,
+  employee.distributionCenterDivisionId,
 
-employee.division,
+  employee.division,
 
-employee.companyCode,
+  employee.companyCode,
 
-employee.companyName,
+  employee.companyName,
 
-employee.payGrade,
+  employee.payGrade,
 
-employee.managerId,
+  employee.managerId,
 
-employee.employmentStatusCode,
+  employee.employmentStatusCode,
 
-employee.compensationTypeCode,
+  employee.compensationTypeCode,
 
-employee.businessUnit,
+  employee.businessUnit,
 
-employee.terminationDate, --in format DD-MON-YYYY
+  employee.terminationDate, --in format DD-MON-YYYY
 
-employee.locationId,
+  employee.locationId,
 
-employee.workAddress.address1,
+  employee.workAddress.address1,
 
-employee.workAddress.city,
+  employee.workAddress.city,
 
-employee.workAddress.state,
+  employee.workAddress.state,
 
-employee.workAddress.postalCode,
+  employee.workAddress.postalCode,
 
-employee.extendedTimeOff.startDate, --in format DD-MON-YYYY
+  employee.extendedTimeOff.startDate, --in format DD-MON-YYYY
 
-employee.flsaCode,
+  employee.flsaCode,
 
-employee.startDate, --in format DD-MON-YYYY
+  employee.startDate, --in format DD-MON-YYYY
 
-1, --If employee.isActive = true then 1 else 0
+  1, --If employee.isActive = true then 1 else 0
 
-employee.userId);
+  employee.userId);
 
 ~~UPDATE INTERIM.MCL_ONBOARDING_AND_EMPL~~
 
@@ -1251,25 +789,26 @@ context.type = “Error”
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2024-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "title": "Resource Not Found",
+  "status": 404,
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "context": [
+    {
+      "type": "Error",
+      "severity": "1",
+      "reasonCode": "422",
+      "component": "employees-ods-sys-api",
+      "timeStamp": "2024-04-20T14:46:59.131Z",
+      "message": "Employee not found for employee Id = 000136222"
+    }
+  ]
 }
+```
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via our common error structure
@@ -1278,25 +817,26 @@ Structure](#_Error_Structure)
 
 Example:
 
+```json
 {  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2024-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "tracingId": "abc55247",  
+  "title": "Resource Not Found",  
+  "status": 404,  
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "422",  
+      "component": "employees-ods-sys-api",  
+      "timeStamp": "2024-04-20T14:46:59.131Z",  
+      "message": "Employee not found for employee Id = 000136222"  
+    }  
+  ]  
 }
+```
 
 ###### HTTP Status Codes
 
@@ -1384,51 +924,29 @@ application/json
 ###### Path Parameters: 
 
 | Name       | Assignment/Description     | Example   |
-|:-----------|:---------------------------|:----------|
+| :--------- | :------------------------- | :-------- |
 | employeeId | Unique employee identifier | 000061149 |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
 | X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 23%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">employee</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Terminated</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Required | Notes  | Example    |
+| ------------ | -------- | ------ | ---------- |
+| employee     | Y        |        |            |
+| status       | Y        | string | Terminated |
+
 
 Example:
 
@@ -1471,10 +989,10 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 
 **CALL** INTERIM_CODE.UPDATEUSERSTATUSBYID_SP(**:EMPLID**,**:ACTIVE**);
 
-| Parameter Name | Parameter Type | Assignment/Description | Example |
-|:---|:--:|----|:---|
-| **EMPLID** | IN | employee.employeeId | 000132731 |
-| **ACTIVE** | IN | If employee.status= Active then 1 else 0 | 1 |
+| Parameter Name | Parameter Type | Assignment/Description                   | Example   |
+| :------------- | :------------: | ---------------------------------------- | :-------- |
+| **EMPLID**     |       IN       | employee.employeeId                      | 000132731 |
+| **ACTIVE**     |       IN       | If employee.status= Active then 1 else 0 | 1         |
 
 Example:
 
@@ -1534,47 +1052,49 @@ context.type = “Error”
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "title": "Resource Not Found",
+  "status": 404,
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "context": [
+    {
+      "type": "Error",
+      "severity": "1",
+      "reasonCode": "422",
+      "component": "employees-ods-sys-api",
+      "timeStamp": "2023-04-20T14:46:59.131Z",
+      "message": "Employee not found for employee Id = 000136222"
+    }
+  ]
 }
+```
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "title": "Resource Not Found",
+  "status": 404,
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "context": [
+    {
+      "type": "Error",
+      "severity": "1",
+      "reasonCode": "422",
+      "component": "employees-ods-sys-api",
+      "timeStamp": "2023-04-20T14:46:59.131Z",
+      "message": "Employee not found for employee Id = 000136222"
+    }
+  ]
 }
+```
 
 ###### HTTP Status Codes
 
@@ -1662,268 +1182,65 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
 | X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 23%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Required</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">employee</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">employeeId</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. psmith</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">employmentStatusCode</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">isActive</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">birthDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2000-09-08</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">ssnLastFour</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1124</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">distributionCenterDivisionId</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">division</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">costCenter</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 20020</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">department</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. "Platform Administration</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">managerId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 000028632</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">locationId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 999</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 001</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyName</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">businessUnit</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR360</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">terminationDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2024-01-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2000-03-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">payGrade</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">flsaCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. N</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">compensationType</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Salary</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">extendedTimeOff</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>date</p>
-<p>EX. 2024-03-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">first</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">middle</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">last</td>
-<td style="text-align: center;">Y</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">job</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">code</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">title</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Driver</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">familyCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. D</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">family</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. IT Platform</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">positionId</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">workAddress</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">address1</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">city</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">postalCode</td>
-<td style="text-align: center;">N</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-<tr>
-<td style="text-align: left;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
+| Element Name                 | Required | Notes   | Example                       |
+| ---------------------------- | -------- | ------- | ----------------------------- |
+| employee                     | Y        |         |                               |
+| employeeId                   | Y        | string  | 000061149                     |
+| userId                       | N        | string  | psmith                        |
+| employmentStatusCode         | Y        | string  | A                             |
+| isActive                     | N        | boolean | true                          |
+| birthDate                    | N        | date    | 2000-09-08                    |
+| ssnLastFour                  | N        | string  | 1124                          |
+| distributionCenterDivisionId | Y        | string  | GR260                         |
+| division                     | Y        | string  | McLane Business Info Services |
+| costCenter                   | Y        | string  | 20020                         |
+| department                   | N        | string  | "Platform Administration      |
+| managerId                    | N        | string  | 000028632                     |
+| locationId                   | N        | string  | 999                           |
+| companyCode                  | N        | string  | 001                           |
+| companyName                  | N        | string  | McLane Company, Inc.          |
+| businessUnit                 | N        | string  | GR360                         |
+| terminationDate              | N        | date    | 2024-01-31                    |
+| startDate                    | N        | date    | 2000-03-31                    |
+| payGrade                     | N        | string  | L                             |
+| flsaCode                     | N        | string  | N                             |
+| compensationType             | Y        | string  | Salary                        |
+| extendedTimeOff              | N        |         |                               |
+| startDate                    | N        | date    | 2024-03-31                    |
+| name                         |          |         |                               |
+| first                        | Y        | string  | Mary                          |
+| middle                       | N        | string  | Sue                           |
+| last                         | Y        | string  | Eliassen                      |
+| job                          | N        |         |                               |
+| code                         | N        | string  | 1067                          |
+| title                        | N        | string  | Driver                        |
+| familyCode                   | N        | string  | D                             |
+| family                       | N        | string  | IT Platform                   |
+| positionId                   | N        | string  | P001537                       |
+| workAddress                  | N        |         |                               |
+| address1                     | N        | string  | 4747 McLane Parkway           |
+| city                         | N        | string  | Temple                        |
+| state                        | N        | string  | TX                            |
+| postalCode                   | N        | string  | 76504                         |
+
 
 Example:
 
@@ -2004,196 +1321,41 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 **CALL**
 INTERIM_CODE.AddUser_SP(**:EMPLID**,**:FIRST_NM**,**:MIDDLE_NM**,**:LAST_NM**,**:BIRTHDATE**,**:SSN**,**:DEPT_ID**,**:DEPT_NM**,**:JOB_CD**,**:JOB_NM**,**:JOB_FAM_CD**,**:JOB_FAM_NM**,**:POSITION_CD**,**:DIV_CD**,**:DIV_NM**,**:COMPANY_CD**,**:COMPANY_NM**,**:GRADE**,**:SUPERVISOR_ID**,**:EMPL_STATUS**,**:EMPL_TYPE**,**:BUSINESS_UNIT**,**:TERM_DT**,**:LOCATION**,**:ADDRESS**,**:CITY**,**:STATE**,**:ZIP**,**:LEAVE_EFF_DT**,**:FLSA_STATUS**,**:START_DT,:ACTIVE,:USER_ID.**);
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 41%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">DB Column Name/SP Parm</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EMPLID</td>
-<td>employee.employeeId</td>
-<td>000000333</td>
-</tr>
-<tr>
-<td>FIRST_NM</td>
-<td>employee.name.first</td>
-<td>Mary</td>
-</tr>
-<tr>
-<td>MIDDLE_NM</td>
-<td>employee.name.middle</td>
-<td>Tammy</td>
-</tr>
-<tr>
-<td>LAST_NM</td>
-<td>employee.name.last</td>
-<td>Schmidt</td>
-</tr>
-<tr>
-<td>BIRTHDATE</td>
-<td><p>employee.birthDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the insert</p></td>
-<td>01-Sep-2001</td>
-</tr>
-<tr>
-<td>SSN</td>
-<td>employee.ssnLastFour</td>
-<td>1123</td>
-</tr>
-<tr>
-<td>DEPT_ID</td>
-<td>employee.costCenter</td>
-<td>20020</td>
-</tr>
-<tr>
-<td>DEPT_NM</td>
-<td>employee.department</td>
-<td style="text-align: left;">McLane Business Info Services</td>
-</tr>
-<tr>
-<td>JOB_CD</td>
-<td>employee.job.code</td>
-<td>1067</td>
-</tr>
-<tr>
-<td>JOB_NM</td>
-<td>employee.job.title</td>
-<td>Stocker</td>
-</tr>
-<tr>
-<td>JOB_FAM_CD</td>
-<td>employee.job.familyCode</td>
-<td>D</td>
-</tr>
-<tr>
-<td>JOB_FAM_NM</td>
-<td>employee.job.family</td>
-<td>IT Platform</td>
-</tr>
-<tr>
-<td>POSITION_CD</td>
-<td>employee.job.positionId</td>
-<td>P001537</td>
-</tr>
-<tr>
-<td>DIV_CD</td>
-<td>employee.distributionCenterDivisionId</td>
-<td>GR260</td>
-</tr>
-<tr>
-<td>DIV_NM</td>
-<td>employee.division</td>
-<td>GR260 GR Concord</td>
-</tr>
-<tr>
-<td>COMPANY_CD</td>
-<td>employee.companyCode</td>
-<td>001</td>
-</tr>
-<tr>
-<td>COMPANY_NM</td>
-<td>employee.companyName</td>
-<td style="text-align: left;">McLane Company, Inc</td>
-</tr>
-<tr>
-<td>GRADE</td>
-<td>employee.payGrade</td>
-<td></td>
-</tr>
-<tr>
-<td>SUPERVISOR_ID</td>
-<td>employee.managerId</td>
-<td>000000111</td>
-</tr>
-<tr>
-<td>EMPL_STATUS</td>
-<td>employee.employmentStatusCode</td>
-<td>A</td>
-</tr>
-<tr>
-<td>EMPL_TYPE</td>
-<td>employee.compensationTypeCode</td>
-<td>Salary</td>
-</tr>
-<tr>
-<td>BUSINESS_UNIT</td>
-<td>employee.distributionCenterDivisionId</td>
-<td></td>
-</tr>
-<tr>
-<td>TERM_DT</td>
-<td><p>employee.terminationDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the insert</p></td>
-<td>01-Sep-2001</td>
-</tr>
-<tr>
-<td>LOCATION</td>
-<td>employee.locationId</td>
-<td>999</td>
-</tr>
-<tr>
-<td>ADDRESS</td>
-<td>employee.workAddress.address1</td>
-<td>123 Center Street</td>
-</tr>
-<tr>
-<td>CITY</td>
-<td>employee.workAddress.city</td>
-<td>Derby</td>
-</tr>
-<tr>
-<td>STATE</td>
-<td>employee.state</td>
-<td>NY</td>
-</tr>
-<tr>
-<td>ZIP</td>
-<td>employee.postalCode</td>
-<td>14126</td>
-</tr>
-<tr>
-<td>LEAVE_EFF_DT</td>
-<td>employee.extendedTimeOff.startDate</td>
-<td>01-Sep-2001</td>
-</tr>
-<tr>
-<td>FLSA_STATUS</td>
-<td>employee.flsaCode</td>
-<td>N</td>
-</tr>
-<tr>
-<td>START_DT</td>
-<td><p>employee.​​​​startDate</p>
-<p>The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD.
-If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY
-format when assigning for the insert</p></td>
-<td>01-Sep-2001</td>
-</tr>
-<tr>
-<td>ACTIVE</td>
-<td>employee.​​​​isActive = true then 1 else 0</td>
-<td>1</td>
-</tr>
-<tr>
-<td>USER_ID</td>
-<td>employee.userId</td>
-<td>psmith</td>
-</tr>
-</tbody>
-</table>
+| DB Column Name/SP Parm | Assignment/Description                                                                                                                                                                                 | Example                       |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
+| EMPLID                 | employee.employeeId                                                                                                                                                                                    | 000000333                     |
+| FIRST_NM               | employee.name.first                                                                                                                                                                                    | Mary                          |
+| MIDDLE_NM              | employee.name.middle                                                                                                                                                                                   | Tammy                         |
+| LAST_NM                | employee.name.last                                                                                                                                                                                     | Schmidt                       |
+| BIRTHDATE              | employee.birthDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the insert       | 01-Sep-2001                   |
+| SSN                    | employee.ssnLastFour                                                                                                                                                                                   | 1123                          |
+| DEPT_ID                | employee.costCenter                                                                                                                                                                                    | 20020                         |
+| DEPT_NM                | employee.department                                                                                                                                                                                    | McLane Business Info Services |
+| JOB_CD                 | employee.job.code                                                                                                                                                                                      | 1067                          |
+| JOB_NM                 | employee.job.title                                                                                                                                                                                     | Stocker                       |
+| JOB_FAM_CD             | employee.job.familyCode                                                                                                                                                                                | D                             |
+| JOB_FAM_NM             | employee.job.family                                                                                                                                                                                    | IT Platform                   |
+| POSITION_CD            | employee.job.positionId                                                                                                                                                                                | P001537                       |
+| DIV_CD                 | employee.distributionCenterDivisionId                                                                                                                                                                  | GR260                         |
+| DIV_NM                 | employee.division                                                                                                                                                                                      | GR260 GR Concord              |
+| COMPANY_CD             | employee.companyCode                                                                                                                                                                                   | 001                           |
+| COMPANY_NM             | employee.companyName                                                                                                                                                                                   | McLane Company, Inc           |
+| GRADE                  | employee.payGrade                                                                                                                                                                                      |                               |
+| SUPERVISOR_ID          | employee.managerId                                                                                                                                                                                     | 000000111                     |
+| EMPL_STATUS            | employee.employmentStatusCode                                                                                                                                                                          | A                             |
+| EMPL_TYPE              | employee.compensationTypeCode                                                                                                                                                                          | Salary                        |
+| BUSINESS_UNIT          | employee.distributionCenterDivisionId                                                                                                                                                                  |                               |
+| TERM_DT                | employee.terminationDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the insert | 01-Sep-2001                   |
+| LOCATION               | employee.locationId                                                                                                                                                                                    | 999                           |
+| ADDRESS                | employee.workAddress.address1                                                                                                                                                                          | 123 Center Street             |
+| CITY                   | employee.workAddress.city                                                                                                                                                                              | Derby                         |
+| STATE                  | employee.state                                                                                                                                                                                         | NY                            |
+| ZIP                    | employee.postalCode                                                                                                                                                                                    | 14126                         |
+| LEAVE_EFF_DT           | employee.extendedTimeOff.startDate                                                                                                                                                                     | 01-Sep-2001                   |
+| FLSA_STATUS            | employee.flsaCode                                                                                                                                                                                      | N                             |
+| START_DT               | employee.​​​​startDate The date format can come in as in format DD-MON-YYYY or YYYY-MM-DD. If the date format comes in as YYYY-MM-DD, convert it to DD-MON-YYYY format when assigning for the insert   | 01-Sep-2001                   |
+| ACTIVE                 | employee.​​​​isActive = true then 1 else 0                                                                                                                                                             | 1                             |
+| USER_ID                | employee.userId                                                                                                                                                                                        | psmith                        |
 
 Example:
 
@@ -2266,25 +1428,26 @@ Structure](#_Error_Structure)
 
 Example:
 
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "title": "Resource Not Found",
+  "status": 404,
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "context": [
+    {
+      "type": "Error",
+      "severity": "1",
+      "reasonCode": "422",
+      "component": "employees-ods-sys-api",
+      "timeStamp": "2023-04-20T14:46:59.131Z",
+      "message": "Employee not found for employee Id = 000136222"
+    }
+  ]
 }
+```
 
 ###### HTTP Status Codes
 
@@ -2372,59 +1535,29 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Query Parameters: 
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 41%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">offset</td>
-<td style="text-align: left;">Optional, default is 0</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr>
-<td style="text-align: left;">limit</td>
-<td style="text-align: left;">Value between 1 and 100, optional default
-is 50</td>
-<td style="text-align: left;">75</td>
-</tr>
-<tr>
-<td style="text-align: left;">filter</td>
-<td style="text-align: left;">URL encoded expression expression that
-returns a boolean value-using the entity's fields to retrieve a subset
-of the results</td>
-<td style="text-align: left;"><p>employeeId eq 000013028 url encoded
-value=</p>
-<p>employeeId%20eq%20%22000013028%22</p></td>
-</tr>
-</tbody>
-</table>
+| Name   | Assignment/Description                                                                                                       | Example                                                                      |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| offset | Optional, default is 0                                                                                                       | 0                                                                            |
+| limit  | Value between 1 and 100, optional default is 50                                                                              | 75                                                                           |
+| filter | URL encoded expression expression that returns a boolean value-using the entity's fields to retrieve a subset of the results | employeeId eq 000013028 url encoded value= employeeId%20eq%20%22000013028%22 |
+
 
 ###### Http Header Parameters: 
 
-| Name | Assignment/Description | Example |
-|:---|:---|:---|
-| tracing_id | Optionally sent in on request | ASY7748901 |
+| Name             | Assignment/Description                                                                                                  | Example                              |
+| :--------------- | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
+| tracing_id       | Optionally sent in on request                                                                                           | ASY7748901                           |
 | X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
 | Element Name | Required | Notes |
-|:-------------|:--------:|:------|
+| :----------- | :------: | :---- |
 |              |          |       |
 
 Example:
@@ -2470,50 +1603,12 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 
 **CALL** INTERIM_CODE.GETUSERS_SP(resultsSet,:OFFSET,:LIMIT,:EMPLID);
 
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 34%" />
-<col style="width: 31%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Stored Procedure Parameter</th>
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>resultsSet</td>
-<td></td>
-<td>Cursor containing the rows returned</td>
-<td></td>
-</tr>
-<tr>
-<td>OFFSET</td>
-<td></td>
-<td>offset query parameter, default to zero</td>
-<td>5</td>
-</tr>
-<tr>
-<td>LIMIT</td>
-<td></td>
-<td>limit query parameter, default to 20</td>
-<td>20</td>
-</tr>
-<tr>
-<td>EMPLID</td>
-<td></td>
-<td><p>employeeId that is passed in as part of the filter query
-parameter</p>
-<p>Ex. employeeId%20eq%20%22000013028%22</p></td>
-<td>000013028</td>
-</tr>
-</tbody>
-</table>
+| Stored Procedure Parameter | Parameter | Assignment/Description                                                                                   | Example   |
+| -------------------------- | --------- | -------------------------------------------------------------------------------------------------------- | --------- |
+| resultsSet                 |           | Cursor containing the rows returned                                                                      |           |
+| OFFSET                     |           | offset query parameter, default to zero                                                                  | 5         |
+| LIMIT                      |           | limit query parameter, default to 20                                                                     | 20        |
+| EMPLID                     |           | employeeId that is passed in as part of the filter query parameter Ex. employeeId%20eq%20%22000013028%22 | 000013028 |
 
 Example:
 
@@ -2679,52 +1774,52 @@ context.type = “Error”
 
 Example:
 
+```json
 {  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Bad Request",  
-"status": 400,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees?filter=userName=000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "tracingId": "abc55247",  
+  "title": "Bad Request",  
+  "status": 400,  
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees?filter=userName=000136222",  
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "422",  
+      "component": "employees-ods-sys-api",  
+      "timeStamp": "2023-04-20T14:46:59.131Z",  
+      "message": "Employee not found for employee Id = 000136222"  
+    }  
+  ]  
 }
+```
 
 If an issue/error are encountered, the specifics related to the error
 are to be reported back on the response via our common error structure
 along with the correlation Id and the tracing Id if provided. See [Error
 Structure](#_Error_Structure)
 
-Example:
-
-{  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Resource Not Found",  
-"status": 404,  
-"instance":
-"https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "employees-ods-sys-api”,  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "Employee not found for employee Id = 000136222"  
-}  
-\]  
+```json
+{
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "tracingId": "abc55247",
+  "title": "Resource Not Found",
+  "status": 404,
+  "instance": "https://apim.mclaneco.com/employees-ods-sys-api/v1/employees/000136222",
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",
+  "context": [
+    {
+      "type": "Error",
+      "severity": "1",
+      "reasonCode": "422",
+      "component": "employees-ods-sys-api",
+      "timeStamp": "2023-04-20T14:46:59.131Z",
+      "message": "Employee not found for employee Id = 000136222"
+    }
+  ]
 }
+```
 
 ###### HTTP Status Codes
 
@@ -2814,26 +1909,26 @@ application/json
 ###### Path Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Query Parameters: Does Not Apply
 
 | Name | Assignment/Description | Example |
-|:-----|:-----------------------|:--------|
+| :--- | :--------------------- | :------ |
 |      |                        |         |
 
 ###### Http Request Parameters: 
 
 | Name       | Assignment/Description | Example    |
-|:-----------|:-----------------------|:-----------|
+| :--------- | :--------------------- | :--------- |
 | tracing_id | Optional               | Z987yy54r3 |
 
 ###### Request Payload: Does Not Apply
 
-| Element Name | Assignment | Notes |     |
-|:-------------|:-----------|:------|:----|
-|              |            |       |     |
+| Element Name | Assignment | Notes |      |
+| :----------- | :--------- | :---- | :--- |
+|              |            |       |      |
 
 Example:
 
@@ -2856,78 +1951,18 @@ payload:
 
 ###### Response Payload: For Successful responses
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">Optional tracing_id from the system API
-request header, if present</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">Constant “OK”</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. OK</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">apiName</td>
-<td style="text-align: left;">app.name</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. employees-ods-sys-api</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">apiVersion</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. v1</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">timestamp</td>
-<td style="text-align: left;">now</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 2022-07-18T16:55:46.678-05:00</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">dependencies</td>
-<td style="text-align: left;">Object that contains the status</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;">Assign the constant “TMSHUB Delivery
-Tracking”</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Employee ODS</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">If successful assign the constant
-“UP”</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. UP</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name  | Assignment                                                         | Notes  | Example                              |
+| ------------- | ------------------------------------------------------------------ | ------ | ------------------------------------ |
+| correlationId | correlationId                                                      | string | d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId     | Optional tracing_id from the system API request header, if present | string | A3345732                             |
+| status        | Constant “OK”                                                      | string | OK                                   |
+| apiName       | app.name                                                           | string | employees-ods-sys-api                |
+| apiVersion    |                                                                    | string | v1                                   |
+| timestamp     | now                                                                | string | 2022-07-18T16:55:46.678-05:00        |
+| dependencies  | Object that contains the status                                    |        |                                      |
+| name          | Assign the constant “TMSHUB Delivery Tracking”                     | string | Employee ODS                         |
+| status        | If successful assign the constant “UP”                             | string | UP                                   |
+
 
 Example:
 
@@ -2964,82 +1999,19 @@ object outlining the context of the issue
 
 ###### Response Payload: For failures only
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>status</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Object that holds processing status
-context</td>
-</tr>
-<tr>
-<td style="text-align: left;">code</td>
-<td style="text-align: left;">Response code</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>messages</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Object that holds the collection of
-diagnostic information</td>
-</tr>
-<tr>
-<td style="text-align: left;">type</td>
-<td style="text-align: left;">“Error”</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">severity</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">reasonCode</td>
-<td style="text-align: left;">Sql code if available</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">message</td>
-<td style="text-align: left;">Error message text</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">context</td>
-<td style="text-align: left;">app.name</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">timeStamp</td>
-<td style="text-align: left;">Current date &amp; time</td>
-<td style="text-align: left;">string</td>
-</tr>
-</tbody>
-</table>
+| Element Name  | Assignment                                                | Notes                                                      | Example                              |
+| ------------- | --------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------ |
+| correlationId | correlationId                                             | string                                                     | d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId     | tracing_id from the system API request header, if present | string                                                     | A3345732                             |
+| status        |                                                           | Object that holds processing status context                |                                      |
+| code          | Response code                                             |                                                            |                                      |
+| messages      |                                                           | Object that holds the collection of diagnostic information |                                      |
+| type          | “Error”                                                   | string                                                     |                                      |
+| severity      |                                                           | string                                                     |                                      |
+| reasonCode    | Sql code if available                                     | string                                                     |                                      |
+| message       | Error message text                                        | string                                                     |                                      |
+| context       | app.name                                                  | string                                                     |                                      |
+| timeStamp     | Current date &amp; time                                   | string                                                     |                                      |
 
 Example:
 
@@ -3120,237 +2092,94 @@ Possible HTTP status codes for the response include:
 ## Employee ODS Oracle Environments:
 
 | Environment | Host                       | Schema  | Service Name    | Port |
-|:------------|:---------------------------|:--------|:----------------|:-----|
+| :---------- | :------------------------- | :------ | :-------------- | :--- |
 | Development | lddscexa-scan.mclaneco.com | INTERIM | WDTOPS_WDTOPST1 | 1521 |
 | Test        | lddscexa-scan.mclaneco.com | INTERIM | WDTOPS_WDTOPST1 | 1521 |
 | Production  | lpdstexa-scan.mclaneco.com | INTERIM | WDTOPS_WDTOPSP  | 1521 |
 
 ## Error Structure
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">title</td>
-<td style="text-align: left;"><p>If http status is:</p>
-<p>400=Bad Request</p>
-<p>401=Unauthorized</p>
-<p>403=Forbidden</p>
-<p>404=Resource Not Found</p>
-<p>405=Method Not Allowed</p>
-<p>406=Not Acceptable</p>
-<p>429=Too Many Requests</p>
-<p>3xx: Redirection</p>
-<p>5xx: Unexpected error</p></td>
-<td style="text-align: left;">Short human-readable title of the error
-that occurred</td>
-</tr>
-<tr>
-<td style="text-align: left;">status</td>
-<td style="text-align: left;">Http status code</td>
-<td style="text-align: left;">holds processing status code</td>
-</tr>
-<tr>
-<td style="text-align: left;">instance</td>
-<td style="text-align: left;">The called url that experienced the
-issue</td>
-<td style="text-align: left;">Ex.
-https://apim.mclaneco.com/ebs-customers-sys-api/v1/customers/sites?phoneNumber=5857732431</td>
-</tr>
-<tr>
-<td style="text-align: left;">requestId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">Id that correlates original request to
-response and other events in the API</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>context</strong></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Object that holds the collection of
-diagnostic information</td>
-</tr>
-<tr>
-<td style="text-align: left;">type</td>
-<td style="text-align: left;">“Error”</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">severity</td>
-<td style="text-align: left;">Optional designation of the criticality of
-the error</td>
-<td style="text-align: left;"><p>1=High</p>
-<p>2=Medium</p>
-<p>3=Low</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">reasonCode</td>
-<td style="text-align: left;">Application return code if available</td>
-<td style="text-align: left;">string, Ex.. 422</td>
-</tr>
-<tr>
-<td style="text-align: left;">message</td>
-<td style="text-align: left;">Error message text</td>
-<td style="text-align: left;">string</td>
-</tr>
-<tr>
-<td style="text-align: left;">component</td>
-<td style="text-align: left;">Application name</td>
-<td style="text-align: left;">string, EX. trimble-shipments-sys-api</td>
-</tr>
-<tr>
-<td style="text-align: left;">timeStamp</td>
-<td style="text-align: left;">Current date &amp; time</td>
-<td style="text-align: left;">string</td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes | Example |
+|---|---|---|---|
+| correlationId | correlationId | string | d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId | tracing_id from the system API request header, if present | string | A3345732 |
+| title | If http status is: 400=Bad Request 401=Unauthorized 403=Forbidden 404=Resource Not Found 405=Method Not Allowed 406=Not Acceptable 429=Too Many Requests 3xx: Redirection 5xx: Unexpected error | Short human-readable title of the error that occurred |  |
+| status | Http status code | holds processing status code |  |
+| instance | The called url that experienced the issue |  | https://apim.mclaneco.com/ebs-customers-sys-api/v1/customers/sites?phoneNumber=5857732431 |
+| requestId | correlationId | Id that correlates original request to response and other events in the API |  |
+| context |  | Object that holds the collection of diagnostic information |  |
+| type | “Error” | string |  |
+| severity | Optional designation of the criticality of the error | 1=High 2=Medium 3=Low |  |
+| reasonCode | Application return code if available | string | 422 |
+| message | Error message text | string |  |
+| component | Application name | string | trimble-shipments-sys-api |
+| timeStamp | Current date & time | string |  |
 
 Example:
 
+```json
 {  
-"correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"tracingId": "abc55247",  
-"title": "Bad Data",  
-"status": 400,  
-"instance":
-"https://apim.mclaneco.com/prc/tracking-shipments/v1/shipments/MC0109MS20230731/positions",  
-"requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
-"context": \[  
-{  
-"type": "Error",  
-"severity": "1",  
-"reasonCode": "422",  
-"component": "trimble-shipments-sys-api",  
-"timeStamp": "2023-04-20T14:46:59.131Z",  
-"message": "HTTP POST on resource
-'https://apim.mclaneco.com:443/prc/tracking-shipments/v1/shipments/MC0109MS20230731/positions'
-failed: bad request (400)."  
-}  
-\]  
+  "correlationId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "tracingId": "abc55247",  
+  "title": "Bad Data",  
+  "status": 400,  
+  "instance": "https://apim.mclaneco.com/prc/tracking-shipments/v1/shipments/MC0109MS20230731/positions",  
+  "requestId": "979f3d3b-a04a-43d7-b55f-8d5609b48783",  
+  "context": [  
+    {  
+      "type": "Error",  
+      "severity": "1",  
+      "reasonCode": "422",  
+      "component": "trimble-shipments-sys-api",  
+      "timeStamp": "2023-04-20T14:46:59.131Z",  
+      "message": "HTTP POST on resource 'https://apim.mclaneco.com:443/prc/tracking-shipments/v1/shipments/MC0109MS20230731/positions' failed: bad request (400)."  
+    }  
+  ]  
 }
+```
 
 ## Log Event Structure
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">tracing_id from the system API request
-header, if present</td>
-<td style="text-align: left;">Ex. A3345732</td>
-</tr>
-<tr>
-<td style="text-align: left;">clientId</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. c9feb3160f0b4ea785875ad678e00c1c</td>
-</tr>
-<tr>
-<td style="text-align: left;">appName</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. mfdb2-sales-sys-api-1</td>
-</tr>
-<tr>
-<td style="text-align: left;">flowName</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. mfdb2-sales-sys-api-main</td>
-</tr>
-<tr>
-<td style="text-align: left;">flowStep</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Ex. Flow End</td>
-</tr>
-<tr>
-<td style="text-align: left;">timestamp</td>
-<td style="text-align: left;">Current date &amp; time</td>
-<td style="text-align: left;">Ex. 2023-04-25T03:06:16.405Z</td>
-</tr>
-<tr>
-<td style="text-align: left;">environment</td>
-<td style="text-align: left;">DEV,TEST, PROD</td>
-<td style="text-align: left;">Based on the environment we are running
-in</td>
-</tr>
-<tr>
-<td style="text-align: left;">payload</td>
-<td style="text-align: left;">If log level is DEBUG add the payload</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes | Example |
+|---|---|---|---|
+| correlationId | correlationId | string | d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId | tracing_id from the system API request header, if present |  | A3345732 |
+| clientId |  |  | c9feb3160f0b4ea785875ad678e00c1c |
+| appName |  |  | mfdb2-sales-sys-api-1 |
+| flowName |  |  | mfdb2-sales-sys-api-main |
+| flowStep |  |  | Flow End |
+| timestamp | Current date &amp; time |  | 2023-04-25T03:06:16.405Z |
+| environment | DEV,TEST, PROD | Based on the environment we are running in |  |
+| payload | If log level is DEBUG add the payload |  |  |
 
 Example:
 
-{  
-"appName": "mcl-b2bi-files-sys-api-1",  
-"clientId": "c9feb3160f0b4ea785875ad678e00c1c",  
-"correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",  
-"tracingId": "A23778-01",  
-"flowName": "ebs-employees-sys-api-main",  
-"flowStep": "Flow End",  
-"timestamp": "2023-05-25T03:06:16.405Z",  
-"environment": "PROD",  
-"payload": {  
-"correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",  
-"tracingId": "",  
-"status": {  
-"code": "200",  
-"messages": \[  
-{  
-"type": "Diagnostic",  
-"message": "BuyerQuestTerm Data has been queued for processing",  
-"timeStamp": "2023-04-25T03:06:16.403Z"  
-}  
-\]  
-}  
-}  
+```json
+{
+  "appName": "mcl-b2bi-files-sys-api-1",
+  "clientId": "c9feb3160f0b4ea785875ad678e00c1c",
+  "correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",
+  "tracingId": "A23778-01",
+  "flowName": "ebs-employees-sys-api-main",
+  "flowStep": "Flow End",
+  "timestamp": "2023-05-25T03:06:16.405Z",
+  "environment": "PROD",
+  "payload": {
+    "correlationId": "23d10540-e316-11ed-8a7a-0205dd115db9",
+    "tracingId": "",
+    "status": {
+      "code": "200",
+      "messages": [
+        {
+          "type": "Diagnostic",
+          "message": "BuyerQuestTerm Data has been queued for processing",
+          "timeStamp": "2023-04-25T03:06:16.403Z"
+        }
+      ]
+    }
+  }
 }
+```
 
 ## Employee Detail Response Structure
 
@@ -3362,52 +2191,13 @@ Where \<schema\> value is INTERIM_CODE externalized in a property file
 
 **CALL** INTERIM_CODE.GETUSERS_SP(resultsSet,:OFFSET,:LIMIT,:EMPLID);
 
-<table>
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 34%" />
-<col style="width: 31%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Stored Procedure Parameter</th>
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: left;">Assignment/Description</th>
-<th style="text-align: left;">Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>resultsSet</td>
-<td></td>
-<td>Cursor containing the rows returned</td>
-<td></td>
-</tr>
-<tr>
-<td>OFFSET</td>
-<td></td>
-<td>offset query parameter, default to zero</td>
-<td>5</td>
-</tr>
-<tr>
-<td>LIMIT</td>
-<td></td>
-<td>limit query parameter, default to 20</td>
-<td>20</td>
-</tr>
-<tr>
-<td>EMPLID</td>
-<td></td>
-<td><p>employeeId that is passed in as part of the filter query
-parameter</p>
-<p>Ex. employeeId eq 000014527</p>
-<p>OR</p>
-<p>the employeeId query parameter</p></td>
-<td>000014527</td>
-</tr>
-</tbody>
-</table>
+| Stored Procedure Parameter | Parameter | Assignment/Description | Example |
+|---|---|---|---|
+| resultsSet |  | Cursor containing the rows returned |  |
+| OFFSET |  | offset query parameter, default to zero | 5 |
+| LIMIT |  | limit query parameter, default to 20 | 20 |
+| EMPLID |  | employeeId that is passed in as part of the filter query parameter Ex. employeeId eq 000014527 OR the employeeId query parameter | 000014527 |
+
 
 Example:
 
@@ -3416,7 +2206,7 @@ CALL INTERIM_CODE.GETUSERS_SP (resultsSet,5,10,000014527);
 Results set Cursor Mapping
 
 | Results Set Position | Field           |
-|----------------------|-----------------|
+| -------------------- | --------------- |
 | 1                    | EMPLID          |
 | 2                    | FIRST_NM        |
 | 3                    | MIDDLE_NM       |
@@ -3470,324 +2260,101 @@ Environments:](#_EBS_Oracle_Environments:)
 
 \*\*See model repo for more details
 
-<table>
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 33%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Element Name</th>
-<th style="text-align: left;">Assignment</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;">correlationId</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. ae8c5b85-97e0-4f55-80e7-6161d67220ae</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">tracingId</td>
-<td style="text-align: left;">Optional tracing_Id from the system API
-request header</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A19283745</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">employee</td>
-<td style="text-align: left;">Object that holds the employee data</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">employeeId</td>
-<td style="text-align: left;">EMPLID from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">userId</td>
-<td style="text-align: left;">USER_ID from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. tsmith</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">employmentStatusCode</td>
-<td style="text-align: left;">EMPL_STATUS from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">isActive</td>
-<td style="text-align: left;">If ACTIVE from the results set = 1 then
-true, otherwise false</td>
-<td style="text-align: left;"><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">birthDate</td>
-<td style="text-align: left;">BIRTHDATE from the results set</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2000-09-08</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">ssnLastFour</td>
-<td style="text-align: left;">SSN from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1124</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">distributionCenterDivisionId</td>
-<td style="text-align: left;">DIV_CD from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">division</td>
-<td style="text-align: left;">DIV_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">costCenter</td>
-<td style="text-align: left;">DEPT_ID from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 20020</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">department</td>
-<td style="text-align: left;"><p>DEPT_NM</p>
-<p>from the results set</p></td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">managerId</td>
-<td style="text-align: left;">SUPERVISOR_ID from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 000028632</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">locationId</td>
-<td style="text-align: left;">LOCATION from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 999</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyName</td>
-<td style="text-align: left;">COMPANY_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">companyCode</td>
-<td style="text-align: left;">COMPANY_CD from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 001</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">businessUnit</td>
-<td style="text-align: left;">BUSINESS_UNIT from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR360</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">terminationDate</td>
-<td style="text-align: left;">TERM_DT from the results set</td>
-<td style="text-align: left;"><p>date</p>
-<p>Ex. 2024-01-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: left;">START_DT from the results set</td>
-<td style="text-align: left;"><p>date</p>
-<p>EX. 2024-03-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">payGrade</td>
-<td style="text-align: left;">GRADE from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">flsaCode</td>
-<td style="text-align: left;">FLSA_STATUS from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. N</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">compensationTypeCode</td>
-<td style="text-align: left;">EMPL_TYPE from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. S</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">businessUnit</td>
-<td style="text-align: left;">BUSINESS_UNIT from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. GR360</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">lastModifiedDateTime</td>
-<td style="text-align: left;">ROWMODIFIEDDATE from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 2024-08-16T19:41:53Z</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">extendedTimeOff</td>
-<td style="text-align: left;">Object that holds the extended leave
-information</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">startDate</td>
-<td style="text-align: left;">LEAVE_EFF_DT from the results set</td>
-<td style="text-align: left;"><p>date</p>
-<p>EX. 2024-03-31</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">name</td>
-<td style="text-align: left;">Employee name parent element</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">first</td>
-<td style="text-align: left;">FIRST_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">middle</td>
-<td style="text-align: left;">MIDDLE_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">last</td>
-<td style="text-align: left;">LAST_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">job</td>
-<td style="text-align: left;">Job parent element</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">code</td>
-<td style="text-align: left;">JOB_CD from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">title</td>
-<td style="text-align: left;">JOB_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">familyCode</td>
-<td style="text-align: left;">JOB_FAM_CD from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. D</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">family</td>
-<td style="text-align: left;">JOB_FAM_NM from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Driver</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">positionId</td>
-<td style="text-align: left;"><p>POSITION_CD</p>
-<p>from the results set</p></td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">workAddress</td>
-<td style="text-align: left;">Work Address parent element</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;">address1</td>
-<td style="text-align: left;">ADDRESS from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">city</td>
-<td style="text-align: left;">CITY from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">state</td>
-<td style="text-align: left;">STATE from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td style="text-align: left;">postalCode</td>
-<td style="text-align: left;">ZIP from the results set</td>
-<td style="text-align: left;"><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes | Example |
+|---|---|---|---|
+| correlationId | correlationId | string |  ae8c5b85-97e0-4f55-80e7-6161d67220ae |
+| tracingId | Optional tracing_Id from the system API request header | string |  A19283745 |
+| employee | Object that holds the employee data |  |  |
+| employeeId | EMPLID from the results set | string |  000061149 |
+| userId | USER_ID from the results set | string |  tsmith |
+| employmentStatusCode | EMPL_STATUS from the results set | string |  A |
+| isActive | If ACTIVE from the results set = 1 then true, otherwise false | boolean |  true |
+| birthDate | BIRTHDATE from the results set | date |  2000-09-08 |
+| ssnLastFour | SSN from the results set | string |  1124 |
+| distributionCenterDivisionId | DIV_CD from the results set | string |  GR260 |
+| division | DIV_NM from the results set | string |  McLane Business Info Services |
+| costCenter | DEPT_ID from the results set | string |  20020 |
+| department | DEPT_NM from the results set | string |  Platform Administration |
+| managerId | SUPERVISOR_ID from the results set | string |  000028632 |
+| locationId | LOCATION from the results set | string |  999 |
+| companyName | COMPANY_NM from the results set | string |  McLane Company, Inc. |
+| companyCode | COMPANY_CD from the results set | string |  001 |
+| businessUnit | BUSINESS_UNIT from the results set | string |  GR360 |
+| terminationDate | TERM_DT from the results set | date |  2024-01-31 |
+| startDate | START_DT from the results set | date |  2024-03-31 |
+| payGrade | GRADE from the results set | string |  L |
+| flsaCode | FLSA_STATUS from the results set | string |  N |
+| compensationTypeCode | EMPL_TYPE from the results set | string |  S |
+| businessUnit | BUSINESS_UNIT from the results set | string |  GR360 |
+| lastModifiedDateTime | ROWMODIFIEDDATE from the results set | string |  2024-08-16T19:41:53Z |
+| extendedTimeOff | Object that holds the extended leave information |  |  |
+| startDate | LEAVE_EFF_DT from the results set | date |  2024-03-31 |
+| name | Employee name parent element |  |  |
+| first | FIRST_NM from the results set | string |  Mary |
+| middle | MIDDLE_NM from the results set | string |  Sue |
+| last | LAST_NM from the results set | string |  Eliassen |
+| job | Job parent element |  |  |
+| code | JOB_CD from the results set | string |  1067 |
+| title | JOB_NM from the results set | string |  L |
+| familyCode | JOB_FAM_CD from the results set | string |  D |
+| family | JOB_FAM_NM from the results set | string |  Driver |
+| positionId | POSITION_CD from the results set | string |  P001537 |
+| workAddress | Work Address parent element |  |  |
+| address1 | ADDRESS from the results set | string |  4747 McLane Parkway |
+| city | CITY from the results set | string |  Temple |
+| state | STATE from the results set | string |  TX |
+| postalCode | ZIP from the results set | string |  76504 |
+
 
 Example:
 
-{  
-"correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",  
-"tracingId": "XYZ188978-001",  
-"employee": {  
-"employeeId": "000136214",
-
-"userId": "zernest",  
-"isActive": true,  
-"employmentStatusCode": "A",  
-"birthDate": "2000-06-08",  
-"ssnLastFour": "1123",  
-"department": "Platform Administration",  
-"distributionCenterDivisionId": "GR260",  
-"division": "GR260 GR Concord",  
-"costCenter": "20020",  
-"managerId": "000028632",  
-"locationId": "999",  
-"companyCode": "001",  
-"companyName": "McLane Company, Inc.",  
-"businessUnit": "GR260",  
-"terminationDate": null,
-
-"startDate": "2022-07-08",  
-"payGrade": "L",  
-"flsaCode": "N",  
-"compensationTypeCode": "S",
-
-"lastModifiedDateTime": "2024-08-16T19:41:53Z",  
-"extendedTimeOff": {  
-"startDate": ""  
-},  
-"name": {  
-"first": "Zachary",  
-"middle": "Ernest",  
-"last": "Hines"  
-},  
-"job": {  
-"code": "1067",  
-"title": "Stocker",  
-"familyCode": "D",  
-"family": "Driver",  
-"positionId": "P001537"  
-},  
-"workAddress": {  
-"address1": "4747 McLane Parkway",  
-"city": "Temple",  
-"state": "TX",  
-"postalCode": "76504"  
-}  
+```json
+{
+  "correlationId": "d5ebd3b0-774e-11ed-aa7d-02d22cb5f8e0",
+  "tracingId": "XYZ188978-001",
+  "employee": {
+    "employeeId": "000136214",
+    "userId": "zernest",
+    "isActive": true,
+    "employmentStatusCode": "A",
+    "birthDate": "2000-06-08",
+    "ssnLastFour": "1123",
+    "department": "Platform Administration",
+    "distributionCenterDivisionId": "GR260",
+    "division": "GR260 GR Concord",
+    "costCenter": "20020",
+    "managerId": "000028632",
+    "locationId": "999",
+    "companyCode": "001",
+    "companyName": "McLane Company, Inc.",
+    "businessUnit": "GR260",
+    "terminationDate": null,
+    "startDate": "2022-07-08",
+    "payGrade": "L",
+    "flsaCode": "N",
+    "compensationTypeCode": "S",
+    "lastModifiedDateTime": "2024-08-16T19:41:53Z",
+    "extendedTimeOff": {
+      "startDate": ""
+    },
+    "name": {
+      "first": "Zachary",
+      "middle": "Ernest",
+      "last": "Hines"
+    },
+    "job": {
+      "code": "1067",
+      "title": "Stocker",
+      "familyCode": "D",
+      "family": "Driver",
+      "positionId": "P001537"
+    },
+    "workAddress": {
+      "address1": "4747 McLane Parkway",
+      "city": "Temple",
+      "state": "TX",
+      "postalCode": "76504"
+    }
+  }
 }
+```
