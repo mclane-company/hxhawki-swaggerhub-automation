@@ -1,0 +1,30 @@
+{
+    "productMetadata": {
+        "description": "APIs expose employee disposition & employee status change in McLane HCM application",
+        "slug": "human-capital-mgmt",
+        "public": false,
+        "hidden": false,
+        "logo": "",
+        "logoDark": "",
+        "autoPublish": true,
+        "validateAPIs": false
+    },
+    "contentMetadata": [
+        {
+            "order": 0,
+            "parent": "",
+            "name": "HLD - Vendavo Users Sys API",
+            "slug": "hld-vendavo-users-sys-api",
+            "type": "markdown",
+            "contentUrl": "hld-vendavo-users-sys-api.md"
+        },
+        {
+            "order": 1,
+            "parent": "hld-vendavo-users-sys-api",
+            "name": "TSD - Vendavo Users Sys API V1",
+            "slug": "tsd-vendavo-users-sys-api",
+            "type": "markdown",
+            "contentUrl": "tsd-vendavo-users-sys-api-v1.md"
+        }
+    ]
+}
