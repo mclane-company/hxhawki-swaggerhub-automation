@@ -1,7 +1,7 @@
 {
     "productMetadata": {
-        "description": "APIs expose employee disposition & employee status change in McLane HCM application",
-        "slug": "human-capital-mgmt",
+        "description": "APIs expose employee data from Vendavo to other systems",
+        "slug": "vendavo-employee-sync",
         "public": false,
         "hidden": false,
         "logo": "",
