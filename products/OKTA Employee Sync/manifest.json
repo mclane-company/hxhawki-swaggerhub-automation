@@ -1,7 +1,7 @@
 {
     "productMetadata": {
         "description": "Allows users to get, search, add and delete users using OKTA APIs",
-        "slug": "oes-scim-users-exp-api",
+        "slug": "okta-employee-sync",
         "public": true,
         "hidden": false,
         "logo": "images/okta.png",
@@ -14,33 +14,33 @@
             "order": 0,
             "parent": "",
             "name": "HLD - SCIM Users Exp API",
-            "slug": "oes-hld-scim-users-exp-api",
+            "slug": "hld-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "oes-hld-scim-users-exp-api.md"
+            "contentUrl": "hld-scim-users-exp-api.md"
         },
         {
             "order": 1,
             "parent": "hld-scim-users-exp-api",
             "name": "TSD - SCIM Users Exp API V1",
-            "slug": "oes-tsd-scim-users-exp-api-v1",
+            "slug": "tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "oes-tsd-scim-users-exp-api-v1.md"
+            "contentUrl": "tsd-scim-users-exp-api-v1.md"
         },
         {
             "order": 2,
             "parent": "",
             "name": "HLD - Employee Sync ODS System API",
-            "slug": "oes-hld-employee-ods-sys-api",
+            "slug": "hld-employee-ods-sys-api",
             "type": "markdown",
-            "contentUrl": "oes-hld-employee-ods-sys-api.md"
+            "contentUrl": "hld-employee-ods-sys-api.md"
         },
         {
             "order": 3,
             "parent": "hld-employee-ods-sys-api",
             "name": "TSD - Employee Sync ODS System API V1",
-            "slug": "oes-tsd-employee-ods-sys-api-v1",
+            "slug": "tsd-employee-ods-sys-api",
             "type": "markdown",
-            "contentUrl": "oes-tsd-employee-ods-sys-api-v1.md"
+            "contentUrl": "tsd-employee-ods-sys-api-v1.md"
         }
     ]
 }
