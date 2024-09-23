@@ -50,7 +50,7 @@ TBC
 Vendavo provides configure, price, and quote capabilities for channel
 customers via their cloud-based applications. This system API will focus
 on the specific nuances associated with the Vendavo API’s related to
-Mclane users of their cloud based system.
+McLane users of their cloud based system.
 
 ## Functional Design
 
@@ -59,7 +59,7 @@ Mclane users of their cloud based system.
 #### Users
 
 The Vendavo cloud based application provides enhanced capability to
-institute a pricing stragetgy that can be customized to a customer or
+institute a pricing strategy that can be customized to a customer or
 channel. This application will focus on managing McLane users of the
 Vendavo cloud based system.
 
@@ -102,7 +102,7 @@ application/json
 | Name             | Assignment/Description                                                                                                 | Example                              |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
 | tracing_id       | Optionally sent in on request                                                                                          | ASY7748901                           |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: 
 
@@ -164,8 +164,8 @@ application/json
 
 | Name      | Assignment/Description                             | Example         |
 | :-------- | :------------------------------------------------- | :-------------- |
-| user_name | User name to create the session with               | myintegrationid |
-| password  | Password of the user for which to create a session | mypassword      |
+| user_name | User name to create the session with               | myIntegrationId |
+| password  | Password of the user for which to create a session | myPassword      |
 
 ######## Http Header Parameters: 
 
@@ -489,7 +489,7 @@ file)*
       "termination_date": "2025-04-30T00:00:00.000Z",  
       "creation_date": "2023-01-24T06:55:04.000Z",  
       "created_by": "asaxen",  
-      "last_updated_by": "mmintegration",  
+      "last_updated_by": "mmIntegration",  
       "last_update_date": "2024-04-09T21:01:54.000Z",  
       "last_update_login": null,  
       "language": null,  
@@ -602,7 +602,7 @@ Example:
 }
 ```
 
-**If sucessful then go onto Step \#4:**
+**If successful then go onto Step \#4:**
 
 ######## Step 4: Delete/End a Vendavo session
 
@@ -834,7 +834,7 @@ GET {BASE_URI}/v1/health
 | Name             | Assignment/Description                                                                                                 | Example                              |
 | :--------------- | :--------------------------------------------------------------------------------------------------------------------- | :----------------------------------- |
 | tracing_id       | Optional                                                                                                               | Z987yy54r3                           |
-| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlatioId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
+| X-Correlation-Id | If this element is present, assign it to correlationId variable, otherwise create a uuid and assign it to correlationId | 23d10540-e316-11ed-8a7a-0205dd115db9 |
 
 ###### Request Payload: Does Not Apply
 
