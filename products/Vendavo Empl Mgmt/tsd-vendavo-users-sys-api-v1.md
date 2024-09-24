@@ -37,7 +37,7 @@ remaining deliveries on schedule.
 
 ## Logical Viewpoint
 
-TBC
+![](./images/embedded/vendavo-users-sys-api_logical-viewpoint.png)
 
 ## Deployment Viewpoint
 
