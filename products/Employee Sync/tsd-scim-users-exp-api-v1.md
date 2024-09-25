@@ -1,92 +1,18 @@
 # History Of Changes
 
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 22%" />
-<col style="width: 49%" />
-<col style="width: 16%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Version</strong></th>
-<th><strong>Author</strong></th>
-<th><strong>Reason for change</strong></th>
-<th><strong>Date</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.0</td>
-<td>J Sack</td>
-<td>Initial</td>
-<td>06/07/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add the Get by id endpoint</td>
-<td>06/11/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add the Put by id endpoint</td>
-<td>06/17/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add the Patch by id endpoint</td>
-<td>06/18/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add the Post user endpoint</td>
-<td>06/20/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Add the Get users endpoint</td>
-<td>07/14/2024</td>
-</tr>
-<tr>
-<td>1.1</td>
-<td></td>
-<td>Add the Service Configuration endpoint</td>
-<td>07/16/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Updated SCIM User response definition</td>
-<td>07/16/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Updated SCIM User request definition for Post &amp; Put</td>
-<td>07/17/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><p>Update endpoints to Users</p>
-<p>change flsaRegionalCode to flsaCode</p>
-<p>change status to employmentStatusCode</p></td>
-<td>07/23/2024</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Update incoming requests and responses based on where OKTA expects
-the middleName element</td>
-<td>08/29/2024</td>
-</tr>
-</tbody>
-</table>
+| **Version** | **Author** | **Reason for change** | **Date** |
+|-------------|------------|-----------------------|----------|
+| 1.0         | J Sack     | Initial               | 06/07/2024 |
+|             |            | Add the Get by id endpoint | 06/11/2024 |
+|             |            | Add the Put by id endpoint | 06/17/2024 |
+|             |            | Add the Patch by id endpoint | 06/18/2024 |
+|             |            | Add the Post user endpoint | 06/20/2024 |
+|             |            | Add the Get users endpoint | 07/14/2024 |
+| 1.1         |            | Add the Service Configuration endpoint | 07/16/2024 |
+|             |            | Updated SCIM User response definition | 07/16/2024 |
+|             |            | Updated SCIM User request definition for Post & Put | 07/17/2024 |
+|             |            | Update endpoints to Users<br>change flsaRegionalCode to flsaCode<br>change status to employmentStatusCode | 07/23/2024 |
+|             |            | Update incoming requests and responses based on where OKTA expects the middleName element | 08/29/2024 |
 
 # Purpose 
 
@@ -233,120 +159,26 @@ The response can be created without any assistance from the system api.
 
 Response Payload description:
 
-<table>
-<colgroup>
-<col style="width: 30%" />
-<col style="width: 36%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>authenticationSchemes</td>
-<td>Empty array</td>
-<td>Ex. []</td>
-</tr>
-<tr>
-<td>bulk</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>false</td>
-<td>Ex. false</td>
-</tr>
-<tr>
-<td>changePassword</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>false</td>
-<td>Ex. false</td>
-</tr>
-<tr>
-<td>documentationUrl</td>
-<td>https://support.okta.com/scim-fake-page.html</td>
-<td>Ex. https://support.okta.com/scim-fake-page.html</td>
-</tr>
-<tr>
-<td>etag</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>false</td>
-<td>Ex. false</td>
-</tr>
-<tr>
-<td>filter</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>maxResults</td>
-<td>100</td>
-<td>Ex. 100</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>true</td>
-<td>Ex. true</td>
-</tr>
-<tr>
-<td>patch</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>false</td>
-<td>Ex. false</td>
-</tr>
-<tr>
-<td>schemas</td>
-<td>"urn:scim:schemas:core:1.0",<br />
-"urn:okta:schemas:scim:providerconfig:1.0"</td>
-<td>Ex. "urn:scim:schemas:core:1.0",
-"urn:okta:schemas:scim:providerconfig:1.0"</td>
-</tr>
-<tr>
-<td>sort</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>supported</td>
-<td>false</td>
-<td>Ex. false</td>
-</tr>
-<tr>
-<td>urn:okta:schemas:scim:providerconfig:1.0</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>userManagementCapabilities</td>
-<td>"PUSH_NEW_USERS",<br />
-"PUSH_PROFILE_UPDATES",<br />
-"PUSH_USER_DEACTIVATION",<br />
-"REACTIVATE_USERS"</td>
-<td>Ex. "PUSH_NEW_USERS",<br />
-"PUSH_PROFILE_UPDATES",<br />
-"PUSH_USER_DEACTIVATION",<br />
-"REACTIVATE_USERS"</td>
-</tr>
-</tbody>
-</table>
+| Element Name                                      | Assignment                                                                 | Notes                                                                 |
+|---------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| authenticationSchemes                             | Empty array                                                               | Ex. []                                                                |
+| bulk                                              |                                                                           | object                                                                |
+| supported                                         | false                                                                     | Ex. false                                                             |
+| changePassword                                    |                                                                           | object                                                                |
+| supported                                         | false                                                                     | Ex. false                                                             |
+| documentationUrl                                  | https://support.okta.com/scim-fake-page.html                              | Ex. https://support.okta.com/scim-fake-page.html                      |
+| etag                                              |                                                                           | object                                                                |
+| supported                                         | false                                                                     | Ex. false                                                             |
+| filter                                            |                                                                           | object                                                                |
+| maxResults                                        | 100                                                                       | Ex. 100                                                               |
+| supported                                         | true                                                                      | Ex. true                                                              |
+| patch                                             |                                                                           | object                                                                |
+| supported                                         | false                                                                     | Ex. false                                                             |
+| schemas                                           | "urn:scim:schemas:core:1.0",<br />"urn:okta:schemas:scim:providerconfig:1.0" | Ex. "urn:scim:schemas:core:1.0",<br />"urn:okta:schemas:scim:providerconfig:1.0" |
+| sort                                              |                                                                           | object                                                                |
+| supported                                         | false                                                                     | Ex. false                                                             |
+| urn:okta:schemas:scim:providerconfig:1.0          |                                                                           | object                                                                |
+| userManagementCapabilities                        | "PUSH_NEW_USERS",<br />"PUSH_PROFILE_UPDATES",<br />"PUSH_USER_DEACTIVATION",<br />"REACTIVATE_USERS" | Ex. "PUSH_NEW_USERS",<br />"PUSH_PROFILE_UPDATES",<br />"PUSH_USER_DEACTIVATION",<br />"REACTIVATE_USERS" |
 
 Example:
 
@@ -742,265 +574,46 @@ application/json
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 21%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th style="text-align: center;">Required</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>schemas</td>
-<td style="text-align: center;">Y</td>
-<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
-<p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr>
-<td>userName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>active</td>
-<td style="text-align: center;">Y</td>
-<td><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td>name</td>
-<td style="text-align: center;">Y</td>
-<td>object</td>
-</tr>
-<tr>
-<td>givenName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td><del>middleName</del></td>
-<td style="text-align: center;"><del>N</del></td>
-<td><p><del>string</del></p>
-<p><del>Ex. Sue</del></p></td>
-</tr>
-<tr>
-<td>familyName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td>password</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. xq69ivVT</p></td>
-</tr>
-<tr>
-<td>urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
-<td style="text-align: center;"></td>
-<td>Object</td>
-</tr>
-<tr>
-<td>userId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. psmith</p></td>
-</tr>
-<tr>
-<td>middleName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td>title</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Administrator, Lead Middleware</p></td>
-</tr>
-<tr>
-<td>streetAddress</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td>city</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td>state</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td>zipCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-<tr>
-<td>department</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td>departmentId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 20000</p></td>
-</tr>
-<tr>
-<td>managerId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>birthDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>Ex. 14-Sep-1959</p></td>
-</tr>
-<tr>
-<td>managerId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>birthDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>Ex. 01-Sep-2000</p></td>
-</tr>
-<tr>
-<td>ssnLastFour</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex.1149</p></td>
-</tr>
-<tr>
-<td>jobCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td>divisionCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td>division</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td>companyCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 001</p></td>
-</tr>
-<tr>
-<td>companyName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td>payGrade</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>employmentStatusCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td>compensationTypeCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. S</p></td>
-</tr>
-<tr>
-<td>businessUnit</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. IS790</p></td>
-</tr>
-<tr>
-<td>terminationDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 31-Sep-2024</p></td>
-</tr>
-<tr>
-<td>extendedLeaveEffectiveDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 14-Sep-2024</p></td>
-</tr>
-<tr>
-<td>flsaCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. V</p></td>
-</tr>
-<tr>
-<td>locationId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>startDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 14-Sep-2000</p></td>
-</tr>
-<tr>
-<td>jobFamilyCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>jobFamilyName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. T Platform</p></td>
-</tr>
-<tr>
-<td>positionCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Required | Notes |
+| ------------ | :------: | ----- |
+| schemas | Y | urn:ietf:params:scim:schemas:core:2.0:User, urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User |
+| userName | Y | string Ex. 000061149 |
+| active | Y | boolean Ex. true |
+| name | Y | object |
+| givenName | Y | string Ex. Mary |
+| ~~middleName~~ | ~~N~~ | ~~string~~ Ex. ~~Sue~~ |
+| familyName | Y | string Ex. Eliassen |
+| password | N | string Ex. xq69ivVT |
+| urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom |  | Object |
+| userId | N | string Ex. psmith |
+| middleName | N | string Ex. Sue |
+| title | N | string Ex. Administrator, Lead Middleware |
+| streetAddress | N | string Ex. 4747 McLane Parkway |
+| city | N | string Ex. Temple |
+| state | N | string Ex. TX |
+| zipCode | N | string Ex. 76504 |
+| department | N | string Ex. Platform Administration |
+| departmentId | N | string Ex. 20000 |
+| managerId | N | string Ex. 000061149 |
+| birthDate | N | date Ex. 14-Sep-1959 |
+| ssnLastFour | N | string Ex.1149 |
+| jobCode | N | string Ex. 1067 |
+| divisionCode | N | string Ex. GR260 |
+| division | N | string Ex. McLane Business Info Services |
+| companyCode | N | string Ex. 001 |
+| companyName | N | string Ex. McLane Company, Inc. |
+| payGrade | N | string Ex. L |
+| employmentStatusCode | N | string Ex. A |
+| compensationTypeCode | N | string Ex. S |
+| businessUnit | N | string Ex. IS790 |
+| terminationDate | N | date Ex. 31-Sep-2024 |
+| extendedLeaveEffectiveDate | N | date Ex. 14-Sep-2024 |
+| flsaCode | N | string Ex. V |
+| locationId | N | string Ex. L |
+| startDate | N | date Ex. 14-Sep-2000 |
+| jobFamilyCode | N | string Ex. L |
+| jobFamilyName | N | string Ex. T Platform |
+| positionCode | N | string Ex. P001537 |
 
 Example:
 
@@ -1343,51 +956,13 @@ application/json
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 26%" />
-<col style="width: 52%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th style="text-align: center;">Required</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>schemas</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. urn:ietf:params:scim:api:messages:2.0:PatchOp</p></td>
-</tr>
-<tr>
-<td>Operations</td>
-<td style="text-align: center;">Y</td>
-<td></td>
-</tr>
-<tr>
-<td>op</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. replace</p></td>
-</tr>
-<tr>
-<td>value</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex.</p></td>
-</tr>
-<tr>
-<td>active</td>
-<td style="text-align: center;">Y</td>
-<td><p>boolean</p>
-<p>Ex. false</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Required | Notes |
+| ------------ | :------: | ----- |
+| schemas      |    Y     | string Ex. urn:ietf:params:scim:api:messages:2.0:PatchOp |
+| Operations   |    Y     |       |
+| op           |    Y     | string Ex. replace |
+| value        |    Y     | string Ex. |
+| active       |    Y     | boolean Ex. false |
 
 Example:
 
@@ -1449,34 +1024,10 @@ See model project for interaction details: employee-ods-sys-api
 
 ######## Request Payload: see OAS model repo employee-ods-sys-api
 
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 11%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th style="text-align: center;">Required</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>employee</td>
-<td style="text-align: center;">Y</td>
-<td></td>
-</tr>
-<tr>
-<td>status</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. Terminated</p>
-<p>If active=false then Terminated else Active</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Required | Notes |
+| ------------ | :------: | ----- |
+| employee     |    Y     |       |
+| status       |    Y     | string Ex. Terminated<br>If active=false then Terminated else Active |
 
 Example:
 
@@ -1680,307 +1231,45 @@ application/json
 
 ###### Request Payload: See the model repo for details
 
-<table>
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 21%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th style="text-align: center;">Required</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>schemas</td>
-<td style="text-align: center;">Y</td>
-<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
-<p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-</tr>
-<tr>
-<td>userName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>active</td>
-<td style="text-align: center;">Y</td>
-<td><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td>name</td>
-<td style="text-align: center;">Y</td>
-<td>object</td>
-</tr>
-<tr>
-<td>givenName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td><del>middleName</del></td>
-<td style="text-align: center;"><del>N</del></td>
-<td><p><del>string</del></p>
-<p><del>Ex. Sue</del></p></td>
-</tr>
-<tr>
-<td>familyName</td>
-<td style="text-align: center;">Y</td>
-<td><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td>password</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. xq69ivVT</p></td>
-</tr>
-<tr>
-<td>urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom</td>
-<td style="text-align: center;"></td>
-<td>Object</td>
-</tr>
-<tr>
-<td>userId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. psmith</p></td>
-</tr>
-<tr>
-<td>middleName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td>title</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Administrator, Lead Middleware</p></td>
-</tr>
-<tr>
-<td>streetAddress</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td>city</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td>state</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td>zipCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-<tr>
-<td>department</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td>departmentId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 20000</p></td>
-</tr>
-<tr>
-<td>managerId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>birthDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>Ex. 14-Sep-1959</p></td>
-</tr>
-<tr>
-<td>title</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Administrator, Lead Middleware</p></td>
-</tr>
-<tr>
-<td>streetAddress</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td>city</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td>state</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td>zipCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-<tr>
-<td>department</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td>departmentId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 20000</p></td>
-</tr>
-<tr>
-<td>managerId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>birthDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>Ex. 01-Sep-2000</p></td>
-</tr>
-<tr>
-<td>ssnLastFour</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex.1149</p></td>
-</tr>
-<tr>
-<td>jobCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td>divisionCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td>division</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td>companyCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. 001</p></td>
-</tr>
-<tr>
-<td>companyName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td>payGrade</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>employmentStatusCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td>compensationTypeCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. S</p></td>
-</tr>
-<tr>
-<td>businessUnit</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. IS790</p></td>
-</tr>
-<tr>
-<td>terminationDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 31-Sep-2024</p></td>
-</tr>
-<tr>
-<td>extendedLeaveEffectiveDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 14-Sep-2024</p></td>
-</tr>
-<tr>
-<td>flsaCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. V</p></td>
-</tr>
-<tr>
-<td>locationId</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>startDate</td>
-<td style="text-align: center;">N</td>
-<td><p>date</p>
-<p>EX. 14-Sep-2000</p></td>
-</tr>
-<tr>
-<td>jobFamilyCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>jobFamilyName</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. T Platform</p></td>
-</tr>
-<tr>
-<td>positionCode</td>
-<td style="text-align: center;">N</td>
-<td><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Required | Notes |
+| ------------ | :------: | ----- |
+| schemas | Y | urn:ietf:params:scim:schemas:core:2.0:User, urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User |
+| userName | Y | string Ex. 000061149 |
+| active | Y | boolean Ex. true |
+| name | Y | object |
+| givenName | Y | string Ex. Mary |
+| familyName | Y | string Ex. Eliassen |
+| password | N | string Ex. xq69ivVT |
+| urn:okta:mclaneco-dev_scimusersexp_2:1.0:user:custom |  | Object |
+| userId | N | string Ex. psmith |
+| middleName | N | string Ex. Sue |
+| title | N | string Ex. Administrator, Lead Middleware |
+| streetAddress | N | string Ex. 4747 McLane Parkway |
+| city | N | string Ex. Temple |
+| state | N | string Ex. TX |
+| zipCode | N | string Ex. 76504 |
+| department | N | string Ex. Platform Administration |
+| departmentId | N | string Ex. 20000 |
+| managerId | N | string Ex. 000061149 |
+| birthDate | N | date Ex. 14-Sep-1959 |
+| ssnLastFour | N | string Ex. 1149 |
+| jobCode | N | string Ex. 1067 |
+| divisionCode | N | string Ex. GR260 |
+| division | N | string Ex. McLane Business Info Services |
+| companyCode | N | string Ex. 001 |
+| companyName | N | string Ex. McLane Company, Inc. |
+| payGrade | N | string Ex. L |
+| employmentStatusCode | N | string Ex. A |
+| compensationTypeCode | N | string Ex. S |
+| businessUnit | N | string Ex. IS790 |
+| terminationDate | N | date Ex. 31-Sep-2024 |
+| extendedLeaveEffectiveDate | N | date Ex. 14-Sep-2024 |
+| flsaCode | N | string Ex. V |
+| locationId | N | string Ex. L |
+| startDate | N | date Ex. 14-Sep-2000 |
+| jobFamilyCode | N | string Ex. L |
+| jobFamilyName | N | string Ex. T Platform |
+| positionCode | N | string Ex. P001537 |
 
 Example:
 
@@ -2377,38 +1666,11 @@ See model project for interaction details: employee-ods-sys-api
 
 ######## Query Parameters: 
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 41%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th>Name</th>
-<th>Assignment/Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>offset</td>
-<td>startIndex query parameter from the request</td>
-<td>0</td>
-</tr>
-<tr>
-<td>limit</td>
-<td>count query parameter from the request</td>
-<td>75</td>
-</tr>
-<tr>
-<td>filter</td>
-<td><p>filter query parameter from the request</p>
-<p>map userName to employeeId</p></td>
-<td>employeeId=000014527</td>
-</tr>
-</tbody>
-</table>
+| Name   | Assignment/Description                      | Example               |
+|--------|---------------------------------------------|-----------------------|
+| offset | startIndex query parameter from the request | 0                     |
+| limit  | count query parameter from the request      | 75                    |
+| filter | filter query parameter from the request <br> map userName to employeeId    | employeeId=000014527  |
 
 ######## Http Header Parameters: 
 
@@ -2458,70 +1720,15 @@ Structure\|outline](#scim-user-response-detail-mapping-structure)
 Response Payload description: [\#SCIM Employee User Detail Mapping
 Structure\|outline](#scim-user-response-detail-mapping-structure)
 
-<table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 42%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>correlationId</td>
-<td>correlationId</td>
-<td><p>string</p>
-<p>Ex. ae8c5b85-97e0-4f55-80e7-6161d67220ae</p></td>
-</tr>
-<tr>
-<td>tracingId</td>
-<td>Optional tracing_Id from the system API request header</td>
-<td><p>string</p>
-<p>Ex. A19283745</p></td>
-</tr>
-<tr>
-<td>schemas</td>
-<td>urn:ietf:params:scim:api:messages:2.0:ListResponse</td>
-<td><p>string array</p>
-<p>EX, urn:ietf:params:scim:api:messages:2.0:ListResponse</p></td>
-</tr>
-<tr>
-<td>totalResults</td>
-<td>Total number of items in the resources collection</td>
-<td><p>number</p>
-<p>Ex. 50</p></td>
-</tr>
-<tr>
-<td>startIndex</td>
-<td>startIndex query parameter</td>
-<td><p>number</p>
-<p>Ex. 1</p></td>
-</tr>
-<tr>
-<td>itemsPerPage</td>
-<td>Total number of items in the resources collection</td>
-<td><p>number</p>
-<p>Ex. 50</p></td>
-</tr>
-<tr>
-<td>Resources</td>
-<td><p>Collection of SCIM employees without the meta information</p>
-<p><a href="#scim-user-response-detail-mapping-structure">#SCIM Employee
-User Detail Mapping Structure|outline</a></p></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes |
+| ------------ | ---------- | ----- |
+| correlationId | correlationId | string<br>Ex. ae8c5b85-97e0-4f55-80e7-6161d67220ae |
+| tracingId | Optional tracing_Id from the system API request header | string<br>Ex. A19283745 |
+| schemas | urn:ietf:params:scim:api:messages:2.0:ListResponse | string array<br>Ex. urn:ietf:params:scim:api:messages:2.0:ListResponse |
+| totalResults | Total number of items in the resources collection | number<br>Ex. 50 |
+| startIndex | startIndex query parameter | number<br>Ex. 1 |
+| itemsPerPage | Total number of items in the resources collection | number<br>Ex. 50 |
+| Resources | Collection of SCIM employees without the meta information<br>[#SCIM Employee User Detail Mapping Structure\|outline](#scim-user-response-detail-mapping-structure) | |
 
 Example:
 
@@ -2797,89 +2004,19 @@ GET https:\<host\>:\<port\>/{BASE_URI}/v1/health
 
 ####### Response Payload: For Successful responses
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>status</td>
-<td>Constant UP or DOWN</td>
-<td><p>string</p>
-<p>Ex. UP</p></td>
-</tr>
-<tr>
-<td>checks</td>
-<td>Object that contains the dependent status</td>
-<td></td>
-</tr>
-<tr>
-<td>name</td>
-<td>The value of API name returned from the calling that application
-health check</td>
-<td><p>string</p>
-<p>Ex. EBS Purchasing</p></td>
-</tr>
-<tr>
-<td>status</td>
-<td>The value of the API status returned from the calling that
-application health check</td>
-<td><p>string</p>
-<p>Ex. UP</p></td>
-</tr>
-<tr>
-<td>data</td>
-<td>Object that hold health check specifics</td>
-<td></td>
-</tr>
-<tr>
-<td>correlationId</td>
-<td>correlationId</td>
-<td><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td>tracingId</td>
-<td>Optional tracing_id from the system API request header, if
-present</td>
-<td><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td>apiVersion</td>
-<td>Version of the API</td>
-<td><p>string</p>
-<p>Ex. v1</p></td>
-</tr>
-<tr>
-<td>apiName</td>
-<td>API application name</td>
-<td><p>string</p>
-<p>Ex. procurement-mgmt-exp-api</p></td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>now</td>
-<td><p>string</p>
-<p>Ex. 2021-07-18T16:55:46.678-05:00</p></td>
-</tr>
-<tr>
-<td>url</td>
-<td>rl called when checking the dependant API</td>
-<td><p>string</p>
-<p>Ex.</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name  | Assignment                                                                 | Notes                                      |
+|---------------|---------------------------------------------------------------------------|--------------------------------------------|
+| status        | Constant UP or DOWN                                                       | string<br>Ex. UP                           |
+| checks        | Object that contains the dependent status                                 |                                            |
+| name          | The value of API name returned from the calling that application health check | string<br>Ex. EBS Purchasing               |
+| status        | The value of the API status returned from the calling that application health check | string<br>Ex. UP                           |
+| data          | Object that hold health check specifics                                   |                                            |
+| correlationId | correlationId                                                             | string<br>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId     | Optional tracing_id from the system API request header, if present        | string<br>Ex. A3345732                     |
+| apiVersion    | Version of the API                                                        | string<br>Ex. v1                           |
+| apiName       | API application name                                                      | string<br>Ex. procurement-mgmt-exp-api     |
+| timestamp     | now                                                                       | string<br>Ex. 2021-07-18T16:55:46.678-05:00|
+| url           | URL called when checking the dependant API                                | string<br>Ex.                              |
 
 Example:
 
@@ -2923,74 +2060,18 @@ object outlining the context of the issue
 
 ###### Response Payload: For failures only
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>correlationId</td>
-<td>correlationId</td>
-<td><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td>tracingId</td>
-<td>tracing_id from the system API request header, if present</td>
-<td><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td>status</td>
-<td>Http status code</td>
-<td>Object that holds processing status context</td>
-</tr>
-<tr>
-<td><strong>context</strong></td>
-<td></td>
-<td>Object that holds the collection of diagnostic information</td>
-</tr>
-<tr>
-<td>type</td>
-<td>“Error”</td>
-<td>string</td>
-</tr>
-<tr>
-<td>severity</td>
-<td></td>
-<td>string</td>
-</tr>
-<tr>
-<td>reasonCode</td>
-<td>Sql code if available</td>
-<td>string</td>
-</tr>
-<tr>
-<td>message</td>
-<td>Error message text</td>
-<td>string</td>
-</tr>
-<tr>
-<td>component</td>
-<td>app.name</td>
-<td>string</td>
-</tr>
-<tr>
-<td>timeStamp</td>
-<td>Current date &amp; time</td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
+| Element Name  | Assignment                                         | Notes                                       |
+|---------------|----------------------------------------------------|---------------------------------------------|
+| correlationId | correlationId                                      | string<br>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId     | tracing_id from the system API request header, if present | string<br>Ex. A3345732                     |
+| status        | Http status code                                   | Object that holds processing status context |
+| **context**   |                                                    | Object that holds the collection of diagnostic information |
+| type          | “Error”                                            | string                                      |
+| severity      |                                                    | string                                      |
+| reasonCode    | Sql code if available                              | string                                      |
+| message       | Error message text                                 | string                                      |
+| component     | app.name                                           | string                                      |
+| timeStamp     | Current date & time                                | string                                      |
 
 Example:
 
@@ -3036,66 +2117,13 @@ Possible HTTP status codes for the response include:
 
 ## SCIM Error Structure
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>correlationId</td>
-<td>correlationId</td>
-<td><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td>tracingId</td>
-<td>tracing_id from the system API request header, if present</td>
-<td><p>string</p>
-<p>Ex. A3345732</p></td>
-</tr>
-<tr>
-<td>schemas</td>
-<td>Assign urn:ietf:params:scim:api:messages:2.0:Error</td>
-<td><p>string</p>
-<p>Ex. urn:ietf:params:scim:api:messages:2.0:Error</p></td>
-</tr>
-<tr>
-<td>message</td>
-<td>Error message text</td>
-<td><p>string</p>
-<p>Ex. User not found</p></td>
-</tr>
-<tr>
-<td>status</td>
-<td><p>Http status code</p>
-<p>400=Bad Request</p>
-<p>401=Unauthorized</p>
-<p>403=Forbidden</p>
-<p>404=Resource Not Found</p>
-<p>405=Method Not Allowed</p>
-<p>406=Not Acceptable</p>
-<p>429=Too Many Requests</p>
-<p>3xx: Redirection</p>
-<p>5xx: Unexpected error</p></td>
-<td><p>number</p>
-<p>Ex, 404</p></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Element Name  | Assignment                                         | Notes                                       |
+|---------------|----------------------------------------------------|---------------------------------------------|
+| correlationId | correlationId                                      | string<br>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId     | tracing_id from the system API request header, if present | string<br>Ex. A3345732                     |
+| schemas       | Assign urn:ietf:params:scim:api:messages:2.0:Error | string<br>Ex. urn:ietf:params:scim:api:messages:2.0:Error |
+| message       | Error message text                                 | string<br>Ex. User not found                |
+| status        | Http status code<br>400=Bad Request<br>401=Unauthorized<br>403=Forbidden<br>404=Resource Not Found<br>405=Method Not Allowed<br>406=Not Acceptable<br>429=Too Many Requests<br>3xx: Redirection<br>5xx: Unexpected error | number<br>Ex. 404 |
 
 Example:
 
@@ -3113,73 +2141,17 @@ Example:
 
 ## Log Event Structure
 
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 40%" />
-<col style="width: 38%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>correlationId</td>
-<td>correlationId</td>
-<td><p>string</p>
-<p>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4</p></td>
-</tr>
-<tr>
-<td>tracingId</td>
-<td>tracing_id from the system API request header, if present</td>
-<td>Ex. A3345732</td>
-</tr>
-<tr>
-<td>clientId</td>
-<td></td>
-<td>Ex. c9feb3160f0b4ea785875ad678e00c1c</td>
-</tr>
-<tr>
-<td>appName</td>
-<td></td>
-<td>Ex. mfdb2-sales-sys-api-1</td>
-</tr>
-<tr>
-<td>flowName</td>
-<td></td>
-<td>Ex. mfdb2-sales-sys-api-main</td>
-</tr>
-<tr>
-<td>flowStep</td>
-<td></td>
-<td>Ex. Flow End</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>Current date &amp; time</td>
-<td>Ex. 2023-04-25T03:06:16.405Z</td>
-</tr>
-<tr>
-<td>environment</td>
-<td>DEV,TEST, PROD</td>
-<td>Based on the environment we are running in</td>
-</tr>
-<tr>
-<td>payload</td>
-<td>If log level is DEBUG add the payload</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes |
+| ------------ | ---------- | ----- |
+| correlationId | correlationId | string<br>Ex. d5f6fbf8-6774-4a95-9b59-15348943abd4 |
+| tracingId | tracing_id from the system API request header, if present | Ex. A3345732 |
+| clientId |  | Ex. c9feb3160f0b4ea785875ad678e00c1c |
+| appName |  | Ex. mfdb2-sales-sys-api-1 |
+| flowName |  | Ex. mfdb2-sales-sys-api-main |
+| flowStep |  | Ex. Flow End |
+| timestamp | Current date & time | Ex. 2023-04-25T03:06:16.405Z |
+| environment | DEV,TEST, PROD | Based on the environment we are running in |
+| payload | If log level is DEBUG add the payload |  |
 
 Example:
 
@@ -3272,282 +2244,51 @@ Example system API response:
 
 \*\*See model repo for more details
 
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 45%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr>
-<th>Element Name</th>
-<th>Assignment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>schemas</td>
-<td><p>Text array of scim schema definitions</p>
-<p>Assign the constants:</p>
-<p>-urn:ietf:params:scim:schemas:core:2.0:User</p>
-<p>-urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
-<td><p>urn:ietf:params:scim:schemas:core:2.0:User,</p>
-<p>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User</p></td>
-</tr>
-<tr>
-<td>id</td>
-<td>employeeId from the response</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>userName</td>
-<td>employeeId from the response</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>active</td>
-<td>isActive from the response</td>
-<td><p>boolean</p>
-<p>Ex. true</p></td>
-</tr>
-<tr>
-<td>name</td>
-<td></td>
-<td>object</td>
-</tr>
-<tr>
-<td>givenName</td>
-<td>name.first from the response</td>
-<td><p>string</p>
-<p>Ex. Mary</p></td>
-</tr>
-<tr>
-<td><del>middleName</del></td>
-<td><del>name.middle from the response</del></td>
-<td><p><del>string</del></p>
-<p><del>Ex. Sue</del></p></td>
-</tr>
-<tr>
-<td>familyName</td>
-<td>name.last from the response</td>
-<td><p>string</p>
-<p>Ex. Eliassen</p></td>
-</tr>
-<tr>
-<td>userId</td>
-<td>userId from the response</td>
-<td><p>string</p>
-<p>Ex. psmith</p></td>
-</tr>
-<tr>
-<td>middleName</td>
-<td>name.middle from the response</td>
-<td><p>string</p>
-<p>Ex. Sue</p></td>
-</tr>
-<tr>
-<td>title</td>
-<td>job.title from the response</td>
-<td><p>string</p>
-<p>Ex. Administrator, Lead Middleware</p></td>
-</tr>
-<tr>
-<td>streetAddress</td>
-<td>workAddress.address1 from the response</td>
-<td><p>string</p>
-<p>Ex. 4747 McLane Parkway</p></td>
-</tr>
-<tr>
-<td>city</td>
-<td>workAddress.city from the response</td>
-<td><p>string</p>
-<p>Ex. Temple</p></td>
-</tr>
-<tr>
-<td>state</td>
-<td>workAddress.state from the response</td>
-<td><p>string</p>
-<p>Ex. TX</p></td>
-</tr>
-<tr>
-<td>zipCode</td>
-<td>workAddress.postalCode from the response</td>
-<td><p>string</p>
-<p>Ex. 76504</p></td>
-</tr>
-<tr>
-<td>department</td>
-<td>department from the response</td>
-<td><p>string</p>
-<p>Ex. Platform Administration</p></td>
-</tr>
-<tr>
-<td>departmentId</td>
-<td>costCenter from the response</td>
-<td><p>string</p>
-<p>Ex. 20000</p></td>
-</tr>
-<tr>
-<td>managerId</td>
-<td>managerId from the response</td>
-<td><p>string</p>
-<p>Ex. 000061149</p></td>
-</tr>
-<tr>
-<td>birthDate</td>
-<td>birthDate from the response</td>
-<td><p>date</p>
-<p>Ex. 11-Oct-1995</p></td>
-</tr>
-<tr>
-<td>ssnLastFour</td>
-<td>ssnLastFour from the response</td>
-<td><p>string</p>
-<p>Ex.1149</p></td>
-</tr>
-<tr>
-<td>jobCode</td>
-<td>job.code from the response</td>
-<td><p>string</p>
-<p>Ex. 1067</p></td>
-</tr>
-<tr>
-<td>divisionCode</td>
-<td>distributionCenterDivisionId from the response</td>
-<td><p>string</p>
-<p>Ex. GR260</p></td>
-</tr>
-<tr>
-<td>division</td>
-<td>division from the response</td>
-<td><p>string</p>
-<p>Ex. McLane Business Info Services</p></td>
-</tr>
-<tr>
-<td>companyCode</td>
-<td>companyCode from the response</td>
-<td><p>string</p>
-<p>Ex. 20020</p></td>
-</tr>
-<tr>
-<td>companyName</td>
-<td>companyName from the response</td>
-<td><p>string</p>
-<p>Ex. McLane Company, Inc.</p></td>
-</tr>
-<tr>
-<td>payGrade</td>
-<td>payGrade from the response</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>employmentStatusCode</td>
-<td>employmentStatusCode from the response</td>
-<td><p>string</p>
-<p>Ex. A</p></td>
-</tr>
-<tr>
-<td>compensationTypeCode</td>
-<td>compensationTypeCode from the response</td>
-<td><p>string</p>
-<p>Ex. S</p></td>
-</tr>
-<tr>
-<td>businessUnit</td>
-<td>businessUnit from the response</td>
-<td><p>string</p>
-<p>Ex. IS970</p></td>
-</tr>
-<tr>
-<td>terminationDate</td>
-<td>terminationDate from the response</td>
-<td><p>date</p>
-<p>EX. 11-Oct-2024</p></td>
-</tr>
-<tr>
-<td>extendedLeaveEffectiveDate</td>
-<td>extendedTimeOff.startDate from the response</td>
-<td><p>date</p>
-<p>EX. 11-Aug-2024</p></td>
-</tr>
-<tr>
-<td>flsaCode</td>
-<td>flsaCode from the response</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>locationId</td>
-<td>locationId from the response</td>
-<td><p>string</p>
-<p>Ex. 099</p></td>
-</tr>
-<tr>
-<td>startDate</td>
-<td>startDate from the response</td>
-<td><p>date</p>
-<p>EX. 11-Oct-2000</p></td>
-</tr>
-<tr>
-<td>jobFamilyCode</td>
-<td>job.familyCode from the response</td>
-<td><p>string</p>
-<p>Ex. L</p></td>
-</tr>
-<tr>
-<td>jobFamilyName</td>
-<td>job.family from the response</td>
-<td><p>string</p>
-<p>Ex. T Platform</p></td>
-</tr>
-<tr>
-<td>positionCode</td>
-<td>job.positionId from the response</td>
-<td><p>string</p>
-<p>Ex. P001537</p></td>
-</tr>
-<tr>
-<td>meta</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>resourceType</td>
-<td>Assign “User”</td>
-<td><p>string</p>
-<p>Ex. User</p></td>
-</tr>
-<tr>
-<td>created</td>
-<td>Assign “User”</td>
-<td><p>date-time</p>
-<p>Ex. 2024-01-23T04:56:22Z</p></td>
-</tr>
-<tr>
-<td>lastModified</td>
-<td>lastModifiedDateTime from the response</td>
-<td><p>date-time</p>
-<p>Ex. 2024-05-13T04:42:34Z</p></td>
-</tr>
-<tr>
-<td>version</td>
-<td>Assign “v2.0”</td>
-<td><p>string</p>
-<p>Ex. v2.0</p></td>
-</tr>
-<tr>
-<td>location</td>
-<td>Assign the full url that was called</td>
-<td><p>string</p>
-<p>Ex.
-https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000136214</p></td>
-</tr>
-</tbody>
-</table>
+| Element Name | Assignment | Notes |
+| ------------ | ---------- | ----- |
+| schemas | Text array of scim schema definitions<br>Assign the constants:<br>-urn:ietf:params:scim:schemas:core:2.0:User<br>-urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User | urn:ietf:params:scim:schemas:core:2.0:User,<br>urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User |
+| id | employeeId from the response | string<br>Ex. 000061149 |
+| userName | employeeId from the response | string<br>Ex. 000061149 |
+| active | isActive from the response | boolean<br>Ex. true |
+| name |  | object |
+| givenName | name.first from the response | string<br>Ex. Mary |
+| ~~middleName~~ | ~~name.middle from the response~~ | ~~string~~<br>~~Ex. Sue~~ |
+| familyName | name.last from the response | string<br>Ex. Eliassen |
+| userId | userId from the response | string<br>Ex. psmith |
+| middleName | name.middle from the response | string<br>Ex. Sue |
+| title | job.title from the response | string<br>Ex. Administrator, Lead Middleware |
+| streetAddress | workAddress.address1 from the response | string<br>Ex. 4747 McLane Parkway |
+| city | workAddress.city from the response | string<br>Ex. Temple |
+| state | workAddress.state from the response | string<br>Ex. TX |
+| zipCode | workAddress.postalCode from the response | string<br>Ex. 76504 |
+| department | department from the response | string<br>Ex. Platform Administration |
+| departmentId | costCenter from the response | string<br>Ex. 20000 |
+| managerId | managerId from the response | string<br>Ex. 000061149 |
+| birthDate | birthDate from the response | date<br>Ex. 11-Oct-1995 |
+| ssnLastFour | ssnLastFour from the response | string<br>Ex.1149 |
+| jobCode | job.code from the response | string<br>Ex. 1067 |
+| divisionCode | distributionCenterDivisionId from the response | string<br>Ex. GR260 |
+| division | division from the response | string<br>Ex. McLane Business Info Services |
+| companyCode | companyCode from the response | string<br>Ex. 20020 |
+| companyName | companyName from the response | string<br>Ex. McLane Company, Inc. |
+| payGrade | payGrade from the response | string<br>Ex. L |
+| employmentStatusCode | employmentStatusCode from the response | string<br>Ex. A |
+| compensationTypeCode | compensationTypeCode from the response | string<br>Ex. S |
+| businessUnit | businessUnit from the response | string<br>Ex. IS970 |
+| terminationDate | terminationDate from the response | date<br>Ex. 11-Oct-2024 |
+| extendedLeaveEffectiveDate | extendedTimeOff.startDate from the response | date<br>Ex. 11-Aug-2024 |
+| flsaCode | flsaCode from the response | string<br>Ex. L |
+| locationId | locationId from the response | string<br>Ex. 099 |
+| startDate | startDate from the response | date<br>Ex. 11-Oct-2000 |
+| jobFamilyCode | job.familyCode from the response | string<br>Ex. L |
+| jobFamilyName | job.family from the response | string<br>Ex. T Platform |
+| positionCode | job.positionId from the response | string<br>Ex. P001537 |
+| meta |  |  |
+| resourceType | Assign “User” | string<br>Ex. User |
+| created | Assign “User” | date-time<br>Ex. 2024-01-23T04:56:22Z |
+| lastModified | lastModifiedDateTime from the response | date-time<br>Ex. 2024-05-13T04:42:34Z |
+| version | Assign “v2.0” | string<br>Ex. v2.0 |
+| location | Assign the full url that was called | string<br>Ex. https://apim-test.mclanecp.com/scim-users-exp-api/v1/users/000136214 |
 
 Example:
 
