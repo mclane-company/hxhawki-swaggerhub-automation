@@ -4,8 +4,8 @@
         "slug": "employee-sync",
         "public": false,
         "hidden": false,
-        "logo": "",
-        "logoDark": "",
+        "logo": "images/employee-sync.png",
+        "logoDark": "images/employee-sync.png",
         "autoPublish": true,
         "validateAPIs": false
     },
