@@ -37,15 +37,15 @@ data from the system of record via the OKTA application.
 
 ## Process Context
 
-![](./images/embedded/process-context.png)
+![](./images/embedded/okta_process-context.png)
 
 ## Logical Viewpoint
 
-![](./images/embedded/logical-viewpoint.png)
+![](./images/embedded/okta_logical-viewpoint.png)
 
 ## Deployment Viewpoint
 
-![](./images/embedded/deployment-viewpoint.png)
+![](./images/embedded/okta_deployment-viewpoint.png)
 
 # System API
 
