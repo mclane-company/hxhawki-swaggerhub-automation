@@ -1,7 +1,7 @@
 {
     "productMetadata": {
-        "description": "APIs expose employee data from Vendavo to other systems",
-        "slug": "vendavo-employee-sync",
+        "description": "Allows users to get, search, add and delete employee data using APIs",
+        "slug": "employee-sync",
         "public": false,
         "hidden": false,
         "logo": "",
