@@ -57,7 +57,7 @@ LDAP based protocol interactions with Active Directory services.
 
 #### Accounts
 
-A user is person who is known to Mclane and requires authenticated
+A user is person who is known to McLane and requires authenticated
 access to authorized resources. Other context about the user is stored
 in the account for that person.
 
@@ -168,7 +168,7 @@ Configuration](#searchone-operation-configuration)
   "title": "Engineer II, Windows",
   "mcLaneUSRPSBadgeID": "000243752",
   "name": "mxelias",
-  "sn": "Eliasen",
+  "sn": "Eliassen",
   "department": "PC and Lan Support",
   "userPrincipalName": "mxelias@mclane.mclaneco.com"
 }
@@ -197,7 +197,7 @@ file)*
   "title": "Engineer II, Windows",  
   "mcLaneUSRPSBadgeID": "000243752",  
   "name": "mxelias",  
-  "sn": "Eliasen",  
+  "sn": "Eliassen",  
   "department": "PC and Lan Support",  
   "userPrincipalName": "mxelias@mclane.mclaneco.com",  
   "memberOf": [  
@@ -249,9 +249,9 @@ file)*
   "singleSignOnId": "mxelias@mclane.mclaneco.com",
   "distinguishedName": "CN=mxelias,OU=Teammates,OU=End Users,OU=Internal Users,DC=mclane,DC=mclaneco,DC=com",
   "givenName": "Mary",
-  "surname": "Eliasen",
+  "surname": "Eliassen",
   "name": "mxelias",
-  "displayName": "Mary Eliasen",
+  "displayName": "Mary Eliassen",
   "division": "MIS - Information Technology - PC Systems",
   "department": "PC and Lan Support",
   "title": "Engineer II, Windows",
