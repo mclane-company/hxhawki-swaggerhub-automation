@@ -1,11 +1,11 @@
 {
     "productMetadata": {
-        "description": "Allows users to get, search, add and delete users using OKTA APIs",
-        "slug": "okta-employee-sync",
+        "description": "APIs expose employee disposition & employee status change in McLane HCM applications",
+        "slug": "human-capital-mgmt",
         "public": false,
         "hidden": false,
-        "logo": "images/okta.png",
-        "logoDark": "images/okta.png",
+        "logo": "images/hcm.png",
+        "logoDark": "images/hcm.png",
         "autoPublish": true,
         "validateAPIs": false
     },
