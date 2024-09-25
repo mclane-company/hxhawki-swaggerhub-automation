@@ -24,7 +24,7 @@ event in the Vendavo application.
 
 # Taxonomy
 
-**Vedavo:** A cloud-based solution providing software for margin and
+**Vendavo:** A cloud-based solution providing software for margin and
 profit optimization to help drive corporate performance through big data
 analytics.
 
@@ -200,7 +200,7 @@ Example request:
         "workgroups": [  
           {  
             "id": "5189354",  
-            "role": "Warehouse Speci"  
+            "role": "Warehouse Special"  
           }  
         ]  
       },  
@@ -282,7 +282,7 @@ See OAS model project for interaction details: vendavo-users-sys-api
 |----|----|----|
 | Element Name | Assignment | Notes |
 | employeeId | employees\[\*\].employeeId from the request | string, Ex. 000157077 |
-| terminatioDate | employees\[\*\].terminationDate from the request | string, Ex. 2022-06-08 |
+| terminationDate | employees\[\*\].terminationDate from the request | string, Ex. 2022-06-08 |
 |  |  |  |
 
 ######## Interact with the Vendavo system API
