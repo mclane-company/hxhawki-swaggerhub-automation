@@ -8,7 +8,7 @@
 | 1.2 |  | More Egencia processing | 01/25/2023 |
 | 1.3 |  | Add division to travel group cross walk for teammates with noreply emails address | 02/01/2023 |
 | 1.4 |  | Add Supervisor Sync processing | 03/08/2023 |
-| 1.5 |  | Remove Supervisor Sync processing sice Shiftboard created a new API | 08/01/2023 |
+| 1.5 |  | Remove Supervisor Sync processing since Shiftboard created a new API | 08/01/2023 |
 |  |  | Update to run in OpenShift | 08/01/2023 |
 | 1.6 |  | Exterro processing changes | 11/14/2023 |
 | 1.7 |  | Call the AD accounts system api to enhance termination event data and publish the enhanced termination event | 04/25/2024 |
@@ -822,7 +822,7 @@ on to Step#4
 #######  Step 3a: Enhance the incoming request from a successful EBS Employee response data:
 
 This step is applicable if the call to EBS employee system API was made
-sucessfully
+successfully
 
 -Cost Center
 
@@ -1588,7 +1588,7 @@ Configuration\|outline](#ibm-mq-enhanced-employee-termination-topic-configuratio
 
 ######## ~~Resource Locators~~
 
-- ~~Process an employee supervisor updatee~~
+- ~~Process an employee supervisor update~~
 
 ~~POST {BASE_URI}/v1/employees/supervisors~~
 
@@ -2165,9 +2165,9 @@ Example successful response:
   "singleSignOnId": "mxelias@mclane.mclaneco.com",
   "distinguishedName": "CN=mxelias,OU=Teammates,OU=End Users,OU=Internal Users,DC=mclane,DC=mclaneco,DC=com",
   "givenName": "Mary",
-  "surname": "Eliasen",
+  "surname": "Eliassen",
   "name": "mxelias",
-  "displayName": "Mary Eliasen",
+  "displayName": "Mary Eliassen",
   "division": "MIS - Information Technology - PC Systems",
   "department": "PC and Lan Support",
   "title": "Engineer II, Windows",
