@@ -21,10 +21,26 @@
         {
             "order": 1,
             "parent": "hld-vendavo-users-sys-api",
-            "name": "TSD - Vendavo Users Sys API V1",
+            "name": "TSD - Vendavo Users Sys API",
             "slug": "tsd-vendavo-users-sys-api",
             "type": "markdown",
-            "contentUrl": "tsd-vendavo-users-sys-api-v1.md"
+            "contentUrl": "tsd-vendavo-users-sys-api.md"
+        },
+        {
+            "order": 2,
+            "parent": "",
+            "name": "HLD - Vendavo Employee Events Process API",
+            "slug": "hld-vendavo-employee-events-prc-api",
+            "type": "markdown",
+            "contentUrl": "hld-vendavo-employee-events-prc-api.md"
+        },
+        {
+            "order": 3,
+            "parent": "hld-vendavo-employee-events-prc-api",
+            "name": "TSD - Vendavo Employee Events Process API",
+            "slug": "tsd-vendavo-employee-events-prc-api",
+            "type": "markdown",
+            "contentUrl": "tsd-vendavo-employee-events-prc-api.md"
         }
     ]
 }

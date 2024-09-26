@@ -21,10 +21,10 @@
         {
             "order": 1,
             "parent": "hld-scim-users-exp-api",
-            "name": "TSD - SCIM Users Exp API V1",
+            "name": "TSD - SCIM Users Exp API",
             "slug": "tsd-scim-users-exp-api",
             "type": "markdown",
-            "contentUrl": "tsd-scim-users-exp-api-v1.md"
+            "contentUrl": "tsd-scim-users-exp-api.md"
         },
         {
             "order": 2,
@@ -37,10 +37,26 @@
         {
             "order": 3,
             "parent": "hld-employee-ods-sys-api",
-            "name": "TSD - Employee Sync ODS System API V1",
+            "name": "TSD - Employee Sync ODS System API",
             "slug": "tsd-employee-ods-sys-api",
             "type": "markdown",
-            "contentUrl": "tsd-employee-ods-sys-api-v1.md"
+            "contentUrl": "tsd-employee-ods-sys-api.md"
+        },
+        {
+            "order": 4,
+            "parent": "",
+            "name": "HLD - AD Accounts System API",
+            "slug": "hld-ad-accounts-sys-api",
+            "type": "markdown",
+            "contentUrl": "hld-ad-accounts-sys-api.md"
+        },
+        {
+            "order": 5,
+            "parent": "hld-ad-accounts-sys-api",
+            "name": "TSD - AD Accounts System API",
+            "slug": "tsd-ad-accounts-sys-api",
+            "type": "markdown",
+            "contentUrl": "tsd-ad-accounts-sys-api.md"
         }
     ]
 }
